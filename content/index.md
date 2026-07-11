@@ -6,5 +6,5 @@ title: Blufrucy's Blog
 
 ## 最近文章
 
-- [[test-post|我的第一篇文章]]
+- [[my-frist-post|我的第一篇文章]]
 - [[欢迎]]
