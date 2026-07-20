@@ -1,4 +1,14 @@
 
+---
+title: Arduino Uno 学习笔记 1
+description: Arduino Uno 入门学习笔记 — 基本语法、串口通信、引脚控制等。
+tags:
+  - Arduino
+  - 嵌入式
+  - 硬件
+date: 2025-09-15
+---
+
 刚开始学习嵌入式硬件
 Arduino语法是建立在C/C++上的，语法差不多
 
@@ -34,8 +44,8 @@ void Rgblight（）
 这时候我们不需要在void setup上面去进行声明，当这个函数在loop上被调用也是正确的操作
 
 高电平和低电平分别使用HIGH和LOW表示
-HIGH=1 输出电压
-LOW=0 输出电压（接地）
+HIGH=1 输出电平
+LOW=0 输出电平（接地）
 
 digitalWrite（引脚号，电平信号）
 这个用来设置引脚的电压信号，例如控制灯的开关：
@@ -43,4 +53,10 @@ digitalWrite（引脚号，电平信号）
 digitalWrite（ledPin，LOW）;关灯
 digitalWrite（ledPin，HIGH）;开灯
 
+digitalRead（引脚号）
+这个函数用来读取输出引脚的电平信息
 
+boolean sigState = 0;
+sigState = digitalRead(sigPin);
+
+LOW=0 ；HIGH=1
