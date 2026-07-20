@@ -1,7 +1,9 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import NavbarConstructor from "../Navbar"
 
 const Header = HeaderConstructor()
+const Navbar = NavbarConstructor()
 
 /**
  * Full-width page frame — no sidebars. The center content area spans the
@@ -24,6 +26,7 @@ export const FullWidthFrame: PageFrame = {
     return (
       <>
         <div class="center full-width">
+          <Navbar {...componentData} />
           <div class="page-header">
             <Header {...componentData}>
               {header.map((HeaderComponent) => (

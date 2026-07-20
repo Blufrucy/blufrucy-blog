@@ -1,7 +1,11 @@
 import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
+import NavbarConstructor from "../Navbar"
+import FooterConstructor from "../Footer"
 
 const Header = HeaderConstructor()
+const Navbar = NavbarConstructor()
+const CustomFooter = FooterConstructor()
 
 /**
  * The default page frame — three-column layout with left sidebar, center
@@ -23,6 +27,7 @@ export const DefaultFrame: PageFrame = {
   }: PageFrameProps) {
     return (
       <>
+        <Navbar {...componentData} />
         <div class="left sidebar">
           {left.map((BodyComponent) => (
             <BodyComponent {...componentData} />
@@ -54,7 +59,7 @@ export const DefaultFrame: PageFrame = {
             <BodyComponent {...componentData} />
           ))}
         </div>
-        <Footer {...componentData} />
+        <CustomFooter {...componentData} />
       </>
     )
   },

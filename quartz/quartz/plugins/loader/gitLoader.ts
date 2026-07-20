@@ -311,6 +311,12 @@ function trySymlink(target: string, linkPath: string): void {
     fs.symlinkSync(target, linkPath, "dir")
   } catch (err: unknown) {
     if ((err as NodeJS.ErrnoException).code === "EEXIST") return
+    // On Windows, symlinks require admin privileges or Developer Mode.
+    // Fall back to copying the directory when symlink is not permitted.
+    if ((err as NodeJS.ErrnoException).code === "EPERM") {
+      fs.cpSync(target, linkPath, { recursive: true, dereference: true })
+      return
+    }
     throw err
   }
 }
