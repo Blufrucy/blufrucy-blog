@@ -35,7 +35,7 @@ delay（1000）
 这个1000只代表频率延时，跟板子时钟有关
 
 除了这些你当然也可以像C和C++一样，编写自定义头文件，设置全局变量，编写外部函数，但是编写外部函数的时候不需要进行提前声明了
-、
+
 例如
 void setup（）
 void loop（）
@@ -60,3 +60,15 @@ boolean sigState = 0;
 sigState = digitalRead(sigPin);
 
 LOW=0 ；HIGH=1
+
+控制无源蜂鸣器使用tone()函数
+
+  tone(pin, frequency);        // 持续发声
+  tone(pin, frequency, duration);  // 发声指定毫秒后自动停止
+  
+参数说明
+  
+pin      输出方波的引脚编号     
+frequency │ 频率（Hz），unsigned int 类型，范围 31 ~ 65535   
+duration  │ 持续时间（毫秒），可选。不写则一直响，直到调用 noTone()
+  
