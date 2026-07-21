@@ -17,7 +17,7 @@ Arduino语法是建立在C/C++上的，语法差不多
 
 Arduino程序主要分为两部分
 
-void setup( )  和  void loop()
+void setup( )  和  void loop( )
 
 void setup( )是程序的入口，主要编写对应针脚的信号模式，设置串口通信等操作，这里只跑一遍
 void loop( )在我看来就是硬件的循环程序，这里无限循环，反复执行
@@ -61,7 +61,7 @@ sigState = digitalRead(sigPin);
 
 LOW=0 ；HIGH=1
 
-控制无源蜂鸣器使用tone()函数
+控制无源蜂鸣器使用tone( )函数
 
   tone(pin, frequency);        // 持续发声
   tone(pin, frequency, duration);  // 发声指定毫秒后自动停止
@@ -71,4 +71,6 @@ LOW=0 ；HIGH=1
 pin      输出方波的引脚编号     
 frequency │ 频率（Hz），unsigned int 类型，范围 31 ~ 65535   
 duration  │ 持续时间（毫秒），可选。不写则一直响，直到调用 noTone()
+
+
   
