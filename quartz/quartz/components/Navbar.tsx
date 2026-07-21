@@ -9,6 +9,7 @@ interface NavLink {
 }
 
 const NAV_LINKS: NavLink[] = [
+  { href: "/关于", zh: "关于", en: "About" },
   { href: "/项目", zh: "项目", en: "Projects" },
   { href: "/博客", zh: "博客", en: "Blog" },
   { href: "/相册", zh: "相册", en: "Album" },
