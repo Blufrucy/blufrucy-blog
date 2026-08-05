@@ -27,13 +27,17 @@
 
 本站用 **Obsidian** 管理 Markdown 笔记，**Quartz 5** 编译为静态站点，部署在 **Vercel**。所有内容中英双语，一套 CSS 实现明暗主题切换。
 
-```
-obsidian vault      quarto build        vercel edge
-     │                   │                   │
-     ├─ content/*.md ──▶  ├─ components/*.tsx ──▶  blufrucy.top
-     ├─ content/docs/     ├─ quartz.config.yaml
-     └─ images/           └─ custom.scss
-```
+## ✦ 页面
+
+| 页面 | 路由 | 内容 |
+|------|------|------|
+| **首页** | `/` | Hero 双栏布局 + Social Pills + 项目卡片 + 技术栈 |
+| **项目** | `/项目` | 6 个作品卡片网格，含标签和外部链接图标 |
+| **博客** | `/博客` | 动态列表 + 标签筛选，从 `contentIndex.json` 自动加载 |
+| **相册** | `/相册` | 9 图网格 + 灯箱，图片懒加载淡入 + shimmer 骨架屏 |
+| **音乐** | `/音乐` | 6 张专辑卡片，渐变封面 + 流派标签 + hover 播放图标 |
+| **动漫** | `/动漫` | 6 部推荐横向卡片，海报 + 评分 + 类型标签 + 个人评价 |
+| **收藏** | `/收藏` | 5 分类书签列表，AI/设计/工具/学习/博客 |
 
 ## ✦ 功能亮点
 
@@ -56,15 +60,15 @@ obsidian vault      quarto build        vercel edge
   </tr>
   <tr>
     <td><b>🧭 Sticky 导航栏</b></td>
-    <td>全宽毛玻璃 · <code>backdrop-filter: blur(8px)</code> · active 高亮 · 自适应折叠</td>
+    <td>全宽毛玻璃 · <code>backdrop-filter: blur(8px)</code> · active 高亮 · 移动端自适应</td>
+  </tr>
+  <tr>
+    <td><b>🎬 动效系统</b></td>
+    <td>卡片 hover 阴影 · 按下 <code>scale(0.985)</code> 反馈 · <code>:focus-visible</code> 键盘焦点 · <code>prefers-reduced-motion</code> 全局禁用</td>
   </tr>
   <tr>
     <td><b>📊 访问统计</b></td>
     <td>Plausible Analytics · 隐私友好 · 零 Cookie · SPA 页面切换追踪</td>
-  </tr>
-  <tr>
-    <td><b>🔗 SPA 导航</b></td>
-    <td>Quartz 内置 micromorph · 无闪烁页面切换 · Popover 链接预览</td>
   </tr>
 </table>
 
@@ -73,29 +77,30 @@ obsidian vault      quarto build        vercel edge
 ```
 Blufrucy-blog/
 ├── content/                  # Obsidian 笔记库
-│   ├── index.md              # 主页 (Hero + Featured + Recent + Stack)
-│   ├── 博客.md               # 博客列表页 (自动列表 + 标签筛选)
-│   ├── 项目.md               # 项目作品集
-│   ├── 相册.md               # 摄影相册
-│   ├── 音乐.md               # 音乐收藏
-│   ├── 动漫.md               # 动漫推荐
-│   ├── 收藏.md               # 收藏夹
+│   ├── index.md              # 首页 (Hero + Featured + Recent + Stack)
+│   ├── 项目.md               # 项目作品集 (卡片网格)
+│   ├── 博客.md               # 博客列表页 (动态列表 + 标签筛选)
+│   ├── 相册.md               # 摄影相册 (网格 + 灯箱)
+│   ├── 音乐.md               # 音乐收藏 (专辑卡片)
+│   ├── 动漫.md               # 动漫推荐 (海报卡片)
+│   ├── 收藏.md               # 收藏夹 (分类链接)
 │   └── docs/                 # 博客文章 (拖放 .md 即发布)
-│       └── Arduino Uno学习笔记1.md
 ├── quartz/                   # Quartz 5 生成器
 │   ├── quartz/
-│   │   ├── components/       # 自定义组件
+│   │   ├── components/       # 自定义 Preact 组件
 │   │   │   ├── Navbar.tsx    #   导航栏 (明暗 + 语言切换)
 │   │   │   ├── Footer.tsx    #   自定义页脚 (Blufrucy 品牌)
-│   │   │   └── frames/       #   布局框架
+│   │   │   └── frames/       #   布局框架 (Default, FullWidth, Minimal)
 │   │   ├── styles/
-│   │   │   ├── custom.scss   #   ⭐ 全部自定义样式 (~1100 行)
+│   │   │   ├── custom.scss   #   ⭐ 全部自定义样式 (~1960 行)
 │   │   │   └── variables.scss
 │   │   └── plugins/
 │   ├── quartz.config.yaml    # ⭐ Quartz 配置 (主题/插件/布局)
 │   ├── public/               # 构建产物 (Vercel 部署目录)
 │   └── package.json
 ├── vercel.json               # Vercel 配置 (cleanUrls)
+├── CLAUDE.md                 # Claude Code 项目指南
+├── AGENTS.md                 # AI 协作上下文与 ADR
 └── README.md
 ```
 
@@ -105,7 +110,7 @@ Blufrucy-blog/
 |---|---|---|
 | **内容创作** | Obsidian | Markdown 笔记 + 双向链接 + 本地 vault |
 | **静态生成** | Quartz 5 (TypeScript) | Obsidian 原生风格 · 插件生态 · SPA 路由 |
-| **样式** | SCSS + CSS Variables | 主题变量 · 响应式断点 · ~1100 行精细化样式 |
+| **样式** | SCSS + CSS Variables | 主题变量 · 响应式断点 · ~1960 行精细化样式 |
 | **组件** | Preact (JSX) | 轻量 · Quartz 内置 · 自定义 Navbar/Footer/Frame |
 | **字体** | Schibsted Grotesk + Source Sans Pro | Google Fonts · 标题/正文分层 |
 | **分析** | Plausible Analytics | 隐私优先 · 零 Cookie · SPA 追踪 |
@@ -114,40 +119,23 @@ Blufrucy-blog/
 ## ✦ 本地开发
 
 ```bash
-# 1. 克隆仓库
-git clone https://github.com/Blufrucy/Blufrucy-blog.git
-cd Blufrucy-blog/quartz
-
-# 2. 安装依赖
+# 1. 安装依赖
+cd quartz
 npm install
 
-# 3. 启动开发服务器 (含热重载)
+# 2. 启动开发服务器 (含热重载)
 npx quartz build -d ../content --serve
+# → http://localhost:8080
 
-# 4. 浏览器打开
-# http://localhost:8080
-```
-
-```bash
-# 构建生产版本 (输出到 public/)
+# 3. 生产构建 (输出到 public/)
 npx quartz build -d ../content
 
-# 检查 TypeScript + 格式化
+# 4. 检查 TypeScript + 格式化
 npm run check
 npm run format
 ```
 
-## ✦ 内容工作流
-
-```
-┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-│  1. 写文章    │ ──▶ │  2. 本地预览  │ ──▶ │  3. Git Push  │
-│  content/docs/│     │  --serve     │     │  Vercel 自动  │
-│  新建 .md     │     │  localhost    │     │  构建 & 部署   │
-└──────────────┘     └──────────────┘     └──────────────┘
-```
-
-撰写文章时，在 frontmatter 中添加标签即可自动出现在博客页面的筛选系统中：
+## ✦ 博客文章约定
 
 ```yaml
 ---
@@ -160,9 +148,9 @@ date: 2026-07-20
 ---
 ```
 
-## ✦ 自定义组件
+文章放 `content/docs/`，frontmatter 中的 `tags` 自动出现在博客筛选系统。
 
-本项目用 TypeScript + Preact 扩展了 Quartz 的原生组件：
+## ✦ 自定义组件
 
 | 组件 | 文件 | 功能 |
 |---|---|---|
@@ -170,22 +158,30 @@ date: 2026-07-20
 | **Footer** | `quartz/components/Footer.tsx` | 全宽页脚 · Blufrucy 品牌字标 · 邮箱 + 电话 |
 | **DefaultFrame** | `quartz/components/frames/DefaultFrame.tsx` | 单栏居中布局 · 无侧边栏 · 使用自定义 Footer |
 
-所有组件通过 `componentRegistry.register()` 本地注册，自动 override Quartz 默认实现。
+所有组件通过 `componentRegistry.register()` 本地注册，覆盖 Quartz 默认实现。
 
 ## ✦ 样式系统
 
-[`custom.scss`](quartz/quartz/styles/custom.scss) 包含约 1100 行 SCSS，按模块组织：
+[`custom.scss`](quartz/quartz/styles/custom.scss) 包含 ~1960 行 SCSS，按模块组织：
 
 | 模块 | 内容 |
 |---|---|
 | **Layout** | CSS Grid 单栏居中 · 100vw 全宽技巧 · footer 贴底 |
 | **Navbar** | 毛玻璃效果 · 响应式 · 暗色模式 |
 | **Hero** | 双栏响应式 · 肖像框装饰边框 · 字体阶梯缩放 (3rem → 4.5rem) |
-| **Cards** | 圆角 12px 项目卡片 · 3 列响应式网格 · hover 阴影 |
+| **Cards** | 圆角 12px 项目卡片 · 3 列响应式网格 · 暗色适配阴影 |
 | **Pills** | 圆角胶囊 · Social Pills · Stack Pills · 标签滤镜 |
-| **Blog** | 列表化布局 · 2 行截断描述 · 标签胶囊 · 筛选按钮 |
+| **Blog** | 列表化布局 · 2 行截断描述 · 标签胶囊 · 筛选按钮 · hover 高亮背景 |
+| **Gallery** | 3 列网格相册 · 灯箱 · shimmer 骨架屏 · 图片淡入 |
+| **Music** | 专辑卡片 · 渐变封面 · hover 播放图标 · 试听按钮 |
+| **Anime** | 横向海报卡片 · 评分展示 · 类型标签 · 日文标题副行 |
+| **Bookmarks** | 分类区段 · 书签列表 · 来源标签 · hover 色移 |
 | **Footer** | 全宽 · 响应式 flex · 品牌展示 |
-| **Theme** | CSS Variables 暗色/亮色双主题 · `#0f0f0f` 纯黑背景 |
+| **Theme** | CSS Variables 暗色/亮色双主题 · `#0f0f0f` 纯黑背景 · `prefers-reduced-motion` |
+
+## ✦ AI 协作
+
+本项目由 Claude Code 驱动开发，项目配置了 [CLAUDE.md](CLAUDE.md)（项目指南）和 [AGENTS.md](AGENTS.md)（AI 协作上下文，含架构决策记录）。
 
 ## ✦ 许可
 
