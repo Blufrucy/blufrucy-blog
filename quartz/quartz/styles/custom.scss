@@ -553,10 +553,19 @@ html {
   color: #ffffff;
   background-color: #1a1a1a;
   border-radius: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.15s ease;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.85;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
   }
 }
 
@@ -580,10 +589,19 @@ html {
   background: transparent;
   border: 1px solid var(--lightgray);
   border-radius: 0;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s ease;
 
   &:hover {
     border-color: var(--gray);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
   }
 }
 
@@ -619,13 +637,22 @@ html {
   font-size: 0.875rem;
   text-decoration: none;
   color: var(--darkgray);
-  transition: border-color 0.2s, background-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s, transform 0.15s ease;
   line-height: 1.2;
 
   &:hover {
     border-color: var(--gray);
     background-color: var(--highlight);
     color: var(--dark);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
   }
 
   svg.external-icon {
@@ -871,10 +898,23 @@ html {
   padding: 1.25rem 0;
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.2s;
+  transition: background-color 0.2s, transform 0.15s ease;
+  border-radius: 4px;
+  margin: 0 -0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   &:hover {
-    opacity: 0.7;
+    background-color: var(--highlight);
+  }
+
+  &:active {
+    transform: scale(0.995);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
   }
 
   @media all and (max-width: 600px) {
@@ -1159,11 +1199,41 @@ body[data-slug^="docs/"] {
     height: 100%;
     display: block;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease;
+
+    // Fade in after load
+    opacity: 0;
+    &.loaded {
+      opacity: 1;
+    }
   }
 
   .gallery-card-inner:hover & img {
     transform: scale(1.03);
+  }
+}
+
+// Image loading shimmer placeholder
+.gallery-card-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--lightgray) 25%,
+    var(--highlight) 37%,
+    var(--lightgray) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
 
@@ -1304,5 +1374,667 @@ body[data-slug="相册"] {
 
   .center > hr:not([data-lang-split]) {
     display: none;
+  }
+}
+
+// ============================================================================
+// Shared section header — used by Projects, Music, Anime, Bookmarks
+// ============================================================================
+.section-header {
+  text-align: center;
+  padding: 3rem 0 3.5rem;
+
+  @media all and (min-width: 768px) {
+    padding: 5rem 0 4rem;
+  }
+}
+
+.section-kicker {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  padding: 0.25rem 0.85rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+}
+
+.section-header h2 {
+  font-family: var(--headerFont);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--dark);
+  margin: 0 auto 0.75rem;
+  max-width: 640px;
+  letter-spacing: -0.01em;
+  border-bottom: none;
+
+  @media all and (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.section-sub {
+  font-size: 0.9375rem;
+  color: var(--gray);
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+// ============================================================================
+// Projects page — card tags + year badge
+// ============================================================================
+.proj-card-year {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.proj-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+}
+
+.proj-card-tag {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--gray);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+
+  .proj-card:hover & {
+    border-color: var(--gray);
+    color: var(--dark);
+  }
+}
+
+// External link icon — positioned top-right on the card
+.proj-card-external {
+  position: relative;
+}
+
+.proj-card-ext-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--gray);
+  opacity: 0.5;
+  transition: opacity 0.2s, color 0.2s;
+  flex-shrink: 0;
+
+  .proj-card:hover & {
+    opacity: 1;
+    color: var(--secondary);
+  }
+}
+
+body[data-slug="项目"] {
+  .page-header {
+    display: none;
+  }
+
+  .center {
+    padding-top: 0 !important;
+  }
+
+  .note-properties {
+    display: none !important;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  .center > hr:not([data-lang-split]) {
+    display: none;
+  }
+
+  .article-title {
+    display: none;
+  }
+}
+
+// ============================================================================
+// Music page — album card grid
+// ============================================================================
+.music-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 0 0 4rem;
+
+  @media all and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media all and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.music-card {
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    border-color: var(--gray);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.music-card-cover {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.music-card-emoji {
+  font-size: 3rem;
+  opacity: 0.6;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .music-card:hover & {
+    transform: scale(1.15);
+  }
+}
+
+.music-card-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.music-card-title {
+  font-family: var(--headerFont);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.music-card-artist {
+  font-size: 0.8125rem;
+  color: var(--gray);
+  margin: 0;
+  font-weight: 400;
+}
+
+.music-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.15rem;
+}
+
+.music-card-genre {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+}
+
+.music-card-year {
+  font-size: 0.6875rem;
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.music-card-note {
+  font-size: 0.8125rem;
+  color: var(--gray);
+  line-height: 1.55;
+  margin: 0.5rem 0 0;
+  font-weight: 300;
+}
+
+.music-card-play-icon {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  .music-card:hover & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  svg {
+    display: block;
+  }
+}
+
+.music-card-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--darkgray);
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+  width: fit-content;
+
+  &:hover {
+    border-color: var(--gray);
+    background-color: var(--dark);
+    color: #ffffff;
+  }
+}
+
+body[data-slug="音乐"] {
+  .page-header {
+    display: none;
+  }
+
+  .center {
+    padding-top: 0 !important;
+  }
+
+  .note-properties {
+    display: none !important;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  .center > hr:not([data-lang-split]) {
+    display: none;
+  }
+
+  .article-title {
+    display: none;
+  }
+}
+
+// ============================================================================
+// Anime page — horizontal poster cards
+// ============================================================================
+.anime-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0 0 4rem;
+}
+
+.anime-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+
+  &:hover {
+    border-color: var(--gray);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  @media all and (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.anime-poster {
+  position: relative;
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  @media all and (min-width: 640px) {
+    width: 200px;
+    min-height: 200px;
+  }
+}
+
+.anime-poster-title {
+  font-family: var(--headerFont);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+  text-align: center;
+  padding: 1rem;
+  line-height: 1.2;
+
+  @media all and (min-width: 640px) {
+    font-size: 1.15rem;
+  }
+}
+
+.anime-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.anime-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.anime-title {
+  font-family: var(--headerFont);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.anime-title-jp {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--gray);
+  margin-top: 0.2rem;
+  letter-spacing: 0.03em;
+}
+
+.anime-rating {
+  font-family: var(--headerFont);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.anime-meta {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.15rem;
+}
+
+.anime-meta-sep {
+  margin: 0 0.3rem;
+  opacity: 0.4;
+}
+
+.anime-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.25rem 0;
+}
+
+.anime-genre-tag {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+
+  .anime-card:hover & {
+    border-color: var(--gray);
+    color: var(--dark);
+  }
+}
+
+.anime-review {
+  font-size: 0.875rem;
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0.35rem 0 0;
+  font-weight: 300;
+}
+
+body[data-slug="动漫"] {
+  .page-header {
+    display: none;
+  }
+
+  .center {
+    padding-top: 0 !important;
+  }
+
+  .note-properties {
+    display: none !important;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  .center > hr:not([data-lang-split]) {
+    display: none;
+  }
+
+  .article-title {
+    display: none;
+  }
+}
+
+// ============================================================================
+// Bookmarks page — categorized link list
+// ============================================================================
+.bookmarks-section {
+  margin-bottom: 2.5rem;
+}
+
+.bookmarks-category {
+  font-family: var(--headerFont);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--lightgray);
+  letter-spacing: -0.01em;
+}
+
+.bookmarks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bookmark-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--lightgray);
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s, background-color 0.2s;
+
+  &:first-child {
+    border-top: 1px solid var(--lightgray);
+  }
+
+  &:hover {
+    opacity: 0.75;
+
+    .bookmark-title {
+      color: var(--secondary);
+    }
+  }
+
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.bookmark-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.bookmark-title {
+  font-family: var(--headerFont);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--dark);
+  transition: color 0.2s;
+  line-height: 1.3;
+}
+
+.bookmark-desc {
+  font-size: 0.8125rem;
+  color: var(--gray);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 300;
+}
+
+.bookmark-source {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 9999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+body[data-slug="收藏"] {
+  .page-header {
+    display: none;
+  }
+
+  .center {
+    padding-top: 0 !important;
+  }
+
+  .note-properties {
+    display: none !important;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  .center > hr:not([data-lang-split]) {
+    display: none;
+  }
+
+  .article-title {
+    display: none;
+  }
+}
+
+// ============================================================================
+// Global polish — press feedback, dark mode shadows, focus, reduced-motion
+// ============================================================================
+
+// Press feedback for all interactive cards
+.proj-card,
+.music-card,
+.anime-card,
+.bookmark-item {
+  transition: transform 0.15s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
+// Dark mode — use lighter shadows visible against #0f0f0f
+:root[saved-theme="dark"] {
+  .proj-card:hover,
+  .music-card:hover,
+  .anime-card:hover {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .gallery-card-inner:hover {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.5),
+      0 12px 32px rgba(0, 0, 0, 0.4),
+      0 0 1px rgba(255, 255, 255, 0.06);
+  }
+}
+
+// Keyboard focus ring for all interactive cards and links
+a:focus-visible,
+.proj-card:focus-visible,
+.music-card:focus-visible,
+.anime-card:focus-visible,
+.bookmark-item:focus-visible,
+.blog-filter-pill:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+// Reduced-motion — respect system preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
