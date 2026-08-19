@@ -3,7 +3,7 @@ configuration:
   pageTitle: Blufrucy's Blog
   pageTitleSuffix: ""
   enableSPA: true
-  enablePopovers: true
+  enablePopovers: false
   analytics:
     provider: plausible
   locale: zh-CN

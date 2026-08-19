@@ -1,6 +1,6 @@
 {
   "name": "@quartz-community/obsidian-flavored-markdown",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Obsidian Flavored Markdown transformer plugin for Quartz",
   "type": "module",
   "license": "MIT",
@@ -43,7 +43,9 @@
     "format": "prettier . --check",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run lint && npm run format && npm run test"
+    "check": "npm run typecheck && npm run lint && npm run format && npm run test",
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && changeset publish"
   },
   "peerDependencies": {
     "preact": "^10.0.0"
@@ -54,10 +56,10 @@
     }
   },
   "dependencies": {
-    "@quartz-community/rehype-obsidian": "github:quartz-community/rehype-obsidian#v0.2.1",
-    "@quartz-community/remark-obsidian": "github:quartz-community/remark-obsidian#v0.2.0",
-    "@quartz-community/types": "github:quartz-community/types",
-    "@quartz-community/utils": "github:quartz-community/utils"
+    "@quartz-community/rehype-obsidian": "^0.1.0",
+    "@quartz-community/remark-obsidian": "^0.1.0",
+    "@quartz-community/types": "^0.2.1",
+    "@quartz-community/utils": "^0.1.0"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",
@@ -81,7 +83,8 @@
     "typescript": "^5.9.3",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.1.0",
-    "vitest": "^2.1.9"
+    "vitest": "^2.1.9",
+    "@changesets/cli": "^2.29.2"
   },
   "engines": {
     "node": ">=22",
@@ -152,5 +155,8 @@
         "type": "boolean"
       }
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

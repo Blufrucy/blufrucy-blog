@@ -4,7 +4,7 @@ import path from 'path';
 
 const require$1 = createRequire(import.meta.url);
 var __require = /* @__PURE__ */ ((x2) => typeof require$1 !== "undefined" ? require$1 : typeof Proxy !== "undefined" ? new Proxy(x2, {
-  get: (a2, b) => (typeof require$1 !== "undefined" ? require$1 : a2)[b]
+  get: (a2, b2) => (typeof require$1 !== "undefined" ? require$1 : a2)[b2]
 }) : x2)(function(x2) {
   if (typeof require$1 !== "undefined") return require$1.apply(this, arguments);
   throw Error('Dynamic require of "' + x2 + '" is not supported');
@@ -14,25 +14,25 @@ var __require = /* @__PURE__ */ ((x2) => typeof require$1 !== "undefined" ? requ
 var n;
 var l;
 var u;
-var v = [];
-function _(l2, u2, t2) {
-  var i2, o2, r2, e2 = {};
-  for (r2 in u2) "key" == r2 ? i2 = u2[r2] : "ref" == r2 ? o2 = u2[r2] : e2[r2] = u2[r2];
+var w = [];
+function k(l2, u2, t2) {
+  var i2, r2, o2, e2 = {};
+  for (o2 in u2) "key" == o2 ? i2 = u2[o2] : "ref" == o2 ? r2 = u2[o2] : e2[o2] = u2[o2];
   if (arguments.length > 2 && (e2.children = arguments.length > 3 ? n.call(arguments, 2) : t2), "function" == typeof l2) ;
-  return m(l2, e2, i2, o2, null);
+  return x(l2, e2, i2, r2, null);
 }
-function m(n2, t2, i2, o2, r2) {
-  var e2 = { type: n2, props: t2, key: i2, ref: o2, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: null == r2 ? ++u : r2, __i: -1, __u: 0 };
+function x(n2, t2, i2, r2, o2) {
+  var e2 = { type: n2, props: t2, key: i2, ref: r2, __k: null, __: null, __b: 0, __e: null, __c: null, constructor: void 0, __v: null == o2 ? ++u : o2, __i: -1, __u: 0 };
   return null != l.vnode && l.vnode(e2), e2;
 }
-n = v.slice, l = { __e: function(n2, l2, u2, t2) {
-  for (var i2, o2, r2; l2 = l2.__; ) if ((i2 = l2.__c) && !i2.__) try {
-    if ((o2 = i2.constructor) && null != o2.getDerivedStateFromError && (i2.setState(o2.getDerivedStateFromError(n2)), r2 = i2.__d), null != i2.componentDidCatch && (i2.componentDidCatch(n2, t2 || {}), r2 = i2.__d), r2) return i2.__E = i2;
+n = w.slice, l = { __e: function(n2, l2, u2, t2) {
+  for (var i2, r2, o2; l2 = l2.__; ) if ((i2 = l2.__c) && !i2.__) try {
+    if ((r2 = i2.constructor) && null != r2.getDerivedStateFromError && (i2.setState(r2.getDerivedStateFromError(n2)), o2 = i2.__d), null != i2.componentDidCatch && (i2.componentDidCatch(n2, t2 || {}), o2 = i2.__d), o2) return i2.__E = i2;
   } catch (l3) {
     n2 = l3;
   }
   throw n2;
-} }, u = 0, "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout;
+} }, u = 0, "function" == typeof Promise ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, Math.random().toString(8);
 
 // src/defaults.ts
 var OBSIDIAN_SANS_STACK = 'ui-sans-serif, -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Inter", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif';
@@ -80,7 +80,7 @@ function mergeInto(map, role, spec) {
   }
 }
 function formatMergedEntry(entry) {
-  const sortedWeights = [...entry.weights].sort((a2, b) => a2 - b);
+  const sortedWeights = [...entry.weights].sort((a2, b2) => a2 - b2);
   const features = [];
   if (entry.italic) {
     features.push("ital");
@@ -297,9 +297,9 @@ function buildGoogleFontsHead(options) {
     code: codeSpec
   });
   return [
-    _("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
-    _("link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" }),
-    _("link", { rel: "stylesheet", href })
+    k("link", { rel: "preconnect", href: "https://fonts.googleapis.com" }),
+    k("link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" }),
+    k("link", { rel: "stylesheet", href })
   ];
 }
 var Fonts = (userOptions) => {
@@ -322,7 +322,7 @@ var Fonts = (userOptions) => {
       if (options.fontOrigin === "googleFonts") {
         additionalHead = buildGoogleFontsHead(options);
       } else if (options.fontOrigin === "selfHosted") {
-        additionalHead = [_("link", { rel: "stylesheet", href: "/static/fonts/quartz-fonts.css" })];
+        additionalHead = [k("link", { rel: "stylesheet", href: "/static/fonts/quartz-fonts.css" })];
       }
       return { css, js: [], additionalHead };
     }

@@ -1881,9 +1881,9 @@ var require_OutputJax2 = __commonJS({
         if (styles2 === void 0) {
           styles2 = {};
         }
-        var _a2 = __read(font, 3), family = _a2[0], italic = _a2[1], bold = _a2[2];
+        var _a2 = __read(font, 3), family = _a2[0], italic2 = _a2[1], bold = _a2[2];
         styles2["font-family"] = this.font.getFamily(family);
-        if (italic)
+        if (italic2)
           styles2["font-style"] = "italic";
         if (bold)
           styles2["font-weight"] = "bold";
@@ -4188,8 +4188,8 @@ var require_Wrapper2 = __commonJS({
     var BBox_js_1 = require_BBox();
     var FontData_js_1 = require_FontData();
     var SMALLSIZE = 2 / 18;
-    function MathMLSpace(script, size) {
-      return script ? size < SMALLSIZE ? 0 : SMALLSIZE : size;
+    function MathMLSpace(script2, size) {
+      return script2 ? size < SMALLSIZE ? 0 : SMALLSIZE : size;
     }
     var CommonWrapper = (function(_super) {
       __extends(CommonWrapper2, _super);
@@ -10915,8 +10915,8 @@ var require_scriptbase = __commonJS({
             this.isLineBelow = this.isLineAccent(mml.underChild);
           }
         };
-        class_1.prototype.isLineAccent = function(script) {
-          var node = script.coreMO().node;
+        class_1.prototype.isLineAccent = function(script2) {
+          var node = script2.coreMO().node;
           return node.isToken && node.getText() === "\u2015";
         };
         class_1.prototype.getBaseWidth = function() {
@@ -12017,15 +12017,15 @@ var require_munderover3 = __commonJS({
           return;
         }
         var svg3 = this.standardSVGnode(parent);
-        var _a2 = __read([this.baseChild, this.scriptChild], 2), base3 = _a2[0], script = _a2[1];
-        var _b = __read([base3.getOuterBBox(), script.getOuterBBox()], 2), bbox = _b[0], sbox = _b[1];
+        var _a2 = __read([this.baseChild, this.scriptChild], 2), base3 = _a2[0], script2 = _a2[1];
+        var _b = __read([base3.getOuterBBox(), script2.getOuterBBox()], 2), bbox = _b[0], sbox = _b[1];
         base3.toSVG(svg3);
-        script.toSVG(svg3);
+        script2.toSVG(svg3);
         var delta = this.isLineBelow ? 0 : this.getDelta(true);
         var v = this.getUnderKV(bbox, sbox)[1];
         var _c = __read(this.getDeltaW([bbox, sbox], [0, -delta]), 2), bx = _c[0], sx = _c[1];
         base3.place(bx, 0);
-        script.place(sx, v);
+        script2.place(sx, v);
       };
       SVGmunder2.kind = munderover_js_4.MmlMunder.prototype.kind;
       return SVGmunder2;
@@ -12042,15 +12042,15 @@ var require_munderover3 = __commonJS({
           return;
         }
         var svg3 = this.standardSVGnode(parent);
-        var _a2 = __read([this.baseChild, this.scriptChild], 2), base3 = _a2[0], script = _a2[1];
-        var _b = __read([base3.getOuterBBox(), script.getOuterBBox()], 2), bbox = _b[0], sbox = _b[1];
+        var _a2 = __read([this.baseChild, this.scriptChild], 2), base3 = _a2[0], script2 = _a2[1];
+        var _b = __read([base3.getOuterBBox(), script2.getOuterBBox()], 2), bbox = _b[0], sbox = _b[1];
         base3.toSVG(svg3);
-        script.toSVG(svg3);
+        script2.toSVG(svg3);
         var delta = this.isLineAbove ? 0 : this.getDelta();
         var u = this.getOverKU(bbox, sbox)[1];
         var _c = __read(this.getDeltaW([bbox, sbox], [0, delta]), 2), bx = _c[0], sx = _c[1];
         base3.place(bx, 0);
-        script.place(sx, u);
+        script2.place(sx, u);
       };
       SVGmover2.kind = munderover_js_4.MmlMover.prototype.kind;
       return SVGmover2;
@@ -12226,15 +12226,15 @@ var require_mmultiscripts = __commonJS({
             psubList: [],
             psupList: []
           };
-          var script = "base";
+          var script2 = "base";
           try {
             for (var _b = __values(this.childNodes), _c = _b.next(); !_c.done; _c = _b.next()) {
               var child = _c.value;
               if (child.node.isKind("mprescripts")) {
-                script = "psubList";
+                script2 = "psubList";
               } else {
-                lists[script].push(child.getOuterBBox());
-                script = exports2.NextScript[script];
+                lists[script2].push(child.getOuterBBox());
+                script2 = exports2.NextScript[script2];
               }
             }
           } catch (e_1_1) {
@@ -22909,9 +22909,9 @@ var require_svg = __commonJS({
         if (variant !== "-explicitFont") {
           var c = (0, string_js_1.unicodeChars)(text3);
           if (c.length !== 1 || c[0] < 119808 || c[0] > 120831) {
-            var _a2 = __read(this.font.getCssFont(variant), 3), family = _a2[0], italic = _a2[1], bold = _a2[2];
+            var _a2 = __read(this.font.getCssFont(variant), 3), family = _a2[0], italic2 = _a2[1], bold = _a2[2];
             adaptor.setAttribute(svg3, "font-family", family);
-            if (italic) {
+            if (italic2) {
               adaptor.setAttribute(svg3, "font-style", "italic");
             }
             if (bold) {
@@ -22964,10 +22964,10 @@ var require_svg = __commonJS({
 
 // node_modules/mathjax-full/js/components/version.js
 var require_version = __commonJS({
-  "node_modules/mathjax-full/js/components/version.js"(exports$1) {
-    Object.defineProperty(exports$1, "__esModule", { value: true });
-    exports$1.VERSION = void 0;
-    exports$1.VERSION = "3.2.1";
+  "node_modules/mathjax-full/js/components/version.js"(exports) {
+    Object.defineProperty(exports, "__esModule", { value: true });
+    exports.VERSION = void 0;
+    exports.VERSION = "3.2.1";
   }
 });
 
@@ -26981,7 +26981,7 @@ var require_ParseUtil = __commonJS({
         return parser.create("node", "mtext", [], def, textNode);
       }
       ParseUtil2.internalText = internalText;
-      function underOver(parser, base3, script, pos, stack) {
+      function underOver(parser, base3, script2, pos, stack) {
         ParseUtil2.checkMovableLimits(base3);
         if (NodeUtil_js_1.default.isType(base3, "munderover") && NodeUtil_js_1.default.isEmbellished(base3)) {
           NodeUtil_js_1.default.setProperties(NodeUtil_js_1.default.getCoreMO(base3), { lspace: 0, rspace: 0 });
@@ -26989,7 +26989,7 @@ var require_ParseUtil = __commonJS({
           base3 = parser.create("node", "mrow", [mo, base3]);
         }
         var mml = parser.create("node", "munderover", [base3]);
-        NodeUtil_js_1.default.setChild(mml, pos === "over" ? mml.over : mml.under, script);
+        NodeUtil_js_1.default.setChild(mml, pos === "over" ? mml.over : mml.under, script2);
         var node = mml;
         if (stack) {
           node = parser.create("node", "TeXAtom", [mml], { texClass: MmlNode_js_1.TEXCLASS.OP, movesupsub: true });
@@ -34118,10 +34118,10 @@ var require_BoldsymbolConfiguration = __commonJS({
     BOLDVARIANT["-tex-mathit"] = TexConstants_js_1.TexConstant.Variant.BOLDITALIC;
     exports2.BoldsymbolMethods = {};
     exports2.BoldsymbolMethods.Boldsymbol = function(parser, name) {
-      var boldsymbol3 = parser.stack.env["boldsymbol"];
+      var boldsymbol = parser.stack.env["boldsymbol"];
       parser.stack.env["boldsymbol"] = true;
       var mml = parser.ParseArg(name);
-      parser.stack.env["boldsymbol"] = boldsymbol3;
+      parser.stack.env["boldsymbol"] = boldsymbol;
       parser.Push(mml);
     };
     new SymbolMap_js_1.CommandMap("boldsymbol", { boldsymbol: "Boldsymbol" }, exports2.BoldsymbolMethods);
@@ -37062,10 +37062,10 @@ var require_MathtoolsUtil = __commonJS({
           "\\textstyle": [false, 0],
           "\\scriptstyle": [false, 1],
           "\\scriptscriptstyle": [false, 2]
-        }, [null, null]), 2), display = _a2[0], script = _a2[1];
+        }, [null, null]), 2), display = _a2[0], script2 = _a2[1];
         if (display !== null) {
           mml.attributes.set("displaystyle", display);
-          mml.attributes.set("scriptlevel", script);
+          mml.attributes.set("scriptlevel", script2);
         }
       },
       checkAlignment: function(parser, name) {
@@ -37319,14 +37319,14 @@ var require_MathtoolsMethods = __commonJS({
         var t = (0, lengths_js_1.em)(thickness);
         var base3 = new TexParser_js_1.default(arg, parser.stack.env, parser.configuration).mml();
         var copy = new TexParser_js_1.default(arg, parser.stack.env, parser.configuration).mml();
-        var script = parser.create("node", "mpadded", [
+        var script2 = parser.create("node", "mpadded", [
           parser.create("node", "mphantom", [copy])
         ], {
           style: "border: ".concat(t, " solid; border-").concat(border, ": none"),
           height,
           depth: 0
         });
-        var node = ParseUtil_js_1.default.underOver(parser, base3, script, pos, true);
+        var node = ParseUtil_js_1.default.underOver(parser, base3, script2, pos, true);
         var munderover = NodeUtil_js_1.default.getChildAt(NodeUtil_js_1.default.getChildAt(node, 0), 0);
         NodeUtil_js_1.default.setAttribute(munderover, accent2, true);
         parser.Push(node);
@@ -43064,9 +43064,9 @@ var require_store = __commonJS({
   }
 });
 
-// node_modules/universalify/index.js
+// node_modules/tough-cookie/node_modules/universalify/index.js
 var require_universalify = __commonJS({
-  "node_modules/universalify/index.js"(exports2) {
+  "node_modules/tough-cookie/node_modules/universalify/index.js"(exports2) {
     exports2.fromCallback = function(fn) {
       return Object.defineProperty(function() {
         if (typeof arguments[arguments.length - 1] === "function") fn.apply(this, arguments);
@@ -44691,9 +44691,9 @@ var require_safer = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/bom-handling.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/lib/bom-handling.js
 var require_bom_handling = __commonJS({
-  "node_modules/iconv-lite/lib/bom-handling.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/lib/bom-handling.js"(exports2) {
     var BOMChar = "\uFEFF";
     exports2.PrependBOM = PrependBOMWrapper;
     function PrependBOMWrapper(encoder, options) {
@@ -44734,9 +44734,9 @@ var require_bom_handling = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/internal.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/internal.js
 var require_internal = __commonJS({
-  "node_modules/iconv-lite/encodings/internal.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/internal.js"(exports2, module2) {
     var Buffer2 = require_safer().Buffer;
     module2.exports = {
       // Encodings
@@ -44885,9 +44885,9 @@ var require_internal = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf32.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf32.js
 var require_utf32 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf32.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf32.js"(exports2) {
     var Buffer2 = require_safer().Buffer;
     exports2._utf32 = Utf32Codec;
     function Utf32Codec(codecOptions, iconv) {
@@ -45103,9 +45103,9 @@ var require_utf32 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf16.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf16.js
 var require_utf16 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf16.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf16.js"(exports2) {
     var Buffer2 = require_safer().Buffer;
     exports2.utf16be = Utf16BECodec;
     function Utf16BECodec() {
@@ -45236,9 +45236,9 @@ var require_utf16 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/utf7.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf7.js
 var require_utf7 = __commonJS({
-  "node_modules/iconv-lite/encodings/utf7.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/utf7.js"(exports2) {
     var Buffer2 = require_safer().Buffer;
     exports2.utf7 = Utf7Codec;
     exports2.unicode11utf7 = "utf7";
@@ -45436,9 +45436,9 @@ var require_utf7 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-codec.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-codec.js
 var require_sbcs_codec = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-codec.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-codec.js"(exports2) {
     var Buffer2 = require_safer().Buffer;
     exports2._sbcs = SBCSCodec;
     function SBCSCodec(codecOptions, iconv) {
@@ -45491,9 +45491,9 @@ var require_sbcs_codec = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-data.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-data.js
 var require_sbcs_data = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-data.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-data.js"(exports2, module2) {
     module2.exports = {
       // Not supported by iconv, not sure why.
       "10029": "maccenteuro",
@@ -45643,9 +45643,9 @@ var require_sbcs_data = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/sbcs-data-generated.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-data-generated.js
 var require_sbcs_data_generated = __commonJS({
-  "node_modules/iconv-lite/encodings/sbcs-data-generated.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/sbcs-data-generated.js"(exports2, module2) {
     module2.exports = {
       "437": "cp437",
       "737": "cp737",
@@ -46097,9 +46097,9 @@ var require_sbcs_data_generated = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/dbcs-codec.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/dbcs-codec.js
 var require_dbcs_codec = __commonJS({
-  "node_modules/iconv-lite/encodings/dbcs-codec.js"(exports2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/dbcs-codec.js"(exports2) {
     var Buffer2 = require_safer().Buffer;
     exports2._dbcs = DBCSCodec;
     var UNASSIGNED = -1;
@@ -46510,9 +46510,9 @@ var require_dbcs_codec = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/shiftjis.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/shiftjis.json
 var require_shiftjis = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/shiftjis.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/shiftjis.json"(exports2, module2) {
     module2.exports = [
       ["0", "\0", 128],
       ["a1", "\uFF61", 62],
@@ -46641,9 +46641,9 @@ var require_shiftjis = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/eucjp.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/eucjp.json
 var require_eucjp = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/eucjp.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/eucjp.json"(exports2, module2) {
     module2.exports = [
       ["0", "\0", 127],
       ["8ea1", "\uFF61", 62],
@@ -46829,9 +46829,9 @@ var require_eucjp = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp936.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp936.json
 var require_cp936 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp936.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp936.json"(exports2, module2) {
     module2.exports = [
       ["0", "\0", 127, "\u20AC"],
       ["8140", "\u4E02\u4E04\u4E05\u4E06\u4E0F\u4E12\u4E17\u4E1F\u4E20\u4E21\u4E23\u4E26\u4E29\u4E2E\u4E2F\u4E31\u4E33\u4E35\u4E37\u4E3C\u4E40\u4E41\u4E42\u4E44\u4E46\u4E4A\u4E51\u4E55\u4E57\u4E5A\u4E5B\u4E62\u4E63\u4E64\u4E65\u4E67\u4E68\u4E6A", 5, "\u4E72\u4E74", 9, "\u4E7F", 6, "\u4E87\u4E8A"],
@@ -47099,9 +47099,9 @@ var require_cp936 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/gbk-added.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/gbk-added.json
 var require_gbk_added = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/gbk-added.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/gbk-added.json"(exports2, module2) {
     module2.exports = [
       ["a140", "\uE4C6", 62],
       ["a180", "\uE505", 32],
@@ -47161,16 +47161,16 @@ var require_gbk_added = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/gb18030-ranges.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json
 var require_gb18030_ranges = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/gb18030-ranges.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json"(exports2, module2) {
     module2.exports = { uChars: [128, 165, 169, 178, 184, 216, 226, 235, 238, 244, 248, 251, 253, 258, 276, 284, 300, 325, 329, 334, 364, 463, 465, 467, 469, 471, 473, 475, 477, 506, 594, 610, 712, 716, 730, 930, 938, 962, 970, 1026, 1104, 1106, 8209, 8215, 8218, 8222, 8231, 8241, 8244, 8246, 8252, 8365, 8452, 8454, 8458, 8471, 8482, 8556, 8570, 8596, 8602, 8713, 8720, 8722, 8726, 8731, 8737, 8740, 8742, 8748, 8751, 8760, 8766, 8777, 8781, 8787, 8802, 8808, 8816, 8854, 8858, 8870, 8896, 8979, 9322, 9372, 9548, 9588, 9616, 9622, 9634, 9652, 9662, 9672, 9676, 9680, 9702, 9735, 9738, 9793, 9795, 11906, 11909, 11913, 11917, 11928, 11944, 11947, 11951, 11956, 11960, 11964, 11979, 12284, 12292, 12312, 12319, 12330, 12351, 12436, 12447, 12535, 12543, 12586, 12842, 12850, 12964, 13200, 13215, 13218, 13253, 13263, 13267, 13270, 13384, 13428, 13727, 13839, 13851, 14617, 14703, 14801, 14816, 14964, 15183, 15471, 15585, 16471, 16736, 17208, 17325, 17330, 17374, 17623, 17997, 18018, 18212, 18218, 18301, 18318, 18760, 18811, 18814, 18820, 18823, 18844, 18848, 18872, 19576, 19620, 19738, 19887, 40870, 59244, 59336, 59367, 59413, 59417, 59423, 59431, 59437, 59443, 59452, 59460, 59478, 59493, 63789, 63866, 63894, 63976, 63986, 64016, 64018, 64021, 64025, 64034, 64037, 64042, 65074, 65093, 65107, 65112, 65127, 65132, 65375, 65510, 65536], gbChars: [0, 36, 38, 45, 50, 81, 89, 95, 96, 100, 103, 104, 105, 109, 126, 133, 148, 172, 175, 179, 208, 306, 307, 308, 309, 310, 311, 312, 313, 341, 428, 443, 544, 545, 558, 741, 742, 749, 750, 805, 819, 820, 7922, 7924, 7925, 7927, 7934, 7943, 7944, 7945, 7950, 8062, 8148, 8149, 8152, 8164, 8174, 8236, 8240, 8262, 8264, 8374, 8380, 8381, 8384, 8388, 8390, 8392, 8393, 8394, 8396, 8401, 8406, 8416, 8419, 8424, 8437, 8439, 8445, 8482, 8485, 8496, 8521, 8603, 8936, 8946, 9046, 9050, 9063, 9066, 9076, 9092, 9100, 9108, 9111, 9113, 9131, 9162, 9164, 9218, 9219, 11329, 11331, 11334, 11336, 11346, 11361, 11363, 11366, 11370, 11372, 11375, 11389, 11682, 11686, 11687, 11692, 11694, 11714, 11716, 11723, 11725, 11730, 11736, 11982, 11989, 12102, 12336, 12348, 12350, 12384, 12393, 12395, 12397, 12510, 12553, 12851, 12962, 12973, 13738, 13823, 13919, 13933, 14080, 14298, 14585, 14698, 15583, 15847, 16318, 16434, 16438, 16481, 16729, 17102, 17122, 17315, 17320, 17402, 17418, 17859, 17909, 17911, 17915, 17916, 17936, 17939, 17961, 18664, 18703, 18814, 18962, 19043, 33469, 33470, 33471, 33484, 33485, 33490, 33497, 33501, 33505, 33513, 33520, 33536, 33550, 37845, 37921, 37948, 38029, 38038, 38064, 38065, 38066, 38069, 38075, 38076, 38078, 39108, 39109, 39113, 39114, 39115, 39116, 39265, 39394, 189e3] };
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp949.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp949.json
 var require_cp949 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp949.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp949.json"(exports2, module2) {
     module2.exports = [
       ["0", "\0", 127],
       ["8141", "\uAC02\uAC03\uAC05\uAC06\uAC0B", 4, "\uAC18\uAC1E\uAC1F\uAC21\uAC22\uAC23\uAC25", 6, "\uAC2E\uAC32\uAC33\uAC34"],
@@ -47447,9 +47447,9 @@ var require_cp949 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/cp950.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp950.json
 var require_cp950 = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/cp950.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/cp950.json"(exports2, module2) {
     module2.exports = [
       ["0", "\0", 127],
       ["a140", "\u3000\uFF0C\u3001\u3002\uFF0E\u2027\uFF1B\uFF1A\uFF1F\uFF01\uFE30\u2026\u2025\uFE50\uFE51\uFE52\xB7\uFE54\uFE55\uFE56\uFE57\uFF5C\u2013\uFE31\u2014\uFE33\u2574\uFE34\uFE4F\uFF08\uFF09\uFE35\uFE36\uFF5B\uFF5D\uFE37\uFE38\u3014\u3015\uFE39\uFE3A\u3010\u3011\uFE3B\uFE3C\u300A\u300B\uFE3D\uFE3E\u3008\u3009\uFE3F\uFE40\u300C\u300D\uFE41\uFE42\u300E\u300F\uFE43\uFE44\uFE59\uFE5A"],
@@ -47630,9 +47630,9 @@ var require_cp950 = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/tables/big5-added.json
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/big5-added.json
 var require_big5_added = __commonJS({
-  "node_modules/iconv-lite/encodings/tables/big5-added.json"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/tables/big5-added.json"(exports2, module2) {
     module2.exports = [
       ["8740", "\u43F0\u4C32\u4603\u45A6\u4578\u{27267}\u4D77\u45B3\u{27CB1}\u4CE2\u{27CC5}\u3B95\u4736\u4744\u4C47\u4C40\u{242BF}\u{23617}\u{27352}\u{26E8B}\u{270D2}\u4C57\u{2A351}\u474F\u45DA\u4C85\u{27C6C}\u4D07\u4AA4\u46A1\u{26B23}\u7225\u{25A54}\u{21A63}\u{23E06}\u{23F61}\u664D\u56FB"],
       ["8767", "\u7D95\u591D\u{28BB9}\u3DF4\u9734\u{27BEF}\u5BDB\u{21D5E}\u5AA4\u3625\u{29EB0}\u5AD1\u5BB7\u5CFC\u676E\u8593\u{29945}\u7461\u749D\u3875\u{21D53}\u{2369E}\u{26021}\u3EEC"],
@@ -47758,9 +47758,9 @@ var require_big5_added = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/dbcs-data.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/dbcs-data.js
 var require_dbcs_data = __commonJS({
-  "node_modules/iconv-lite/encodings/dbcs-data.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/dbcs-data.js"(exports2, module2) {
     module2.exports = {
       // == Japanese/ShiftJIS ====================================================
       // All japanese encodings are based on JIS X set of standards:
@@ -48004,9 +48004,9 @@ var require_dbcs_data = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/encodings/index.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/index.js
 var require_encodings = __commonJS({
-  "node_modules/iconv-lite/encodings/index.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/encodings/index.js"(exports2, module2) {
     var modules = [
       require_internal(),
       require_utf32(),
@@ -48030,9 +48030,9 @@ var require_encodings = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/streams.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/lib/streams.js
 var require_streams = __commonJS({
-  "node_modules/iconv-lite/lib/streams.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/lib/streams.js"(exports2, module2) {
     var Buffer2 = require_safer().Buffer;
     module2.exports = function(stream_module) {
       var Transform = stream_module.Transform;
@@ -48124,9 +48124,9 @@ var require_streams = __commonJS({
   }
 });
 
-// node_modules/iconv-lite/lib/index.js
+// node_modules/whatwg-encoding/node_modules/iconv-lite/lib/index.js
 var require_lib = __commonJS({
-  "node_modules/iconv-lite/lib/index.js"(exports2, module2) {
+  "node_modules/whatwg-encoding/node_modules/iconv-lite/lib/index.js"(exports2, module2) {
     var Buffer2 = require_safer().Buffer;
     var bomHandling = require_bom_handling();
     var iconv = module2.exports;
@@ -162370,8 +162370,8 @@ var require_HTMLScriptElement_impl = __commonJS({
             contentType = MIMEType.parse(response.headers["content-type"]) || new MIMEType("text/plain");
           }
           const encoding = whatwgEncoding.getBOMEncoding(data) || contentType && whatwgEncoding.labelToName(contentType.parameters.get("charset")) || defaultEncoding;
-          const script = whatwgEncoding.decode(data, encoding);
-          this._innerEval(script, urlString);
+          const script2 = whatwgEncoding.decode(data, encoding);
+          this._innerEval(script2, urlString);
         };
         request = resourceLoader.fetch(urlString, {
           element: this,
@@ -195328,6 +195328,9 @@ var require_form_data = __commonJS({
     var setToStringTag = require_es_set_tostringtag();
     var hasOwn = require_hasown();
     var populate = require_populate();
+    function escapeHeaderParam(str) {
+      return String(str).replace(/\r/g, "%0D").replace(/\n/g, "%0A").replace(/"/g, "%22");
+    }
     function FormData(options) {
       if (!(this instanceof FormData)) {
         return new FormData(options);
@@ -195417,7 +195420,7 @@ var require_form_data = __commonJS({
       var contents = "";
       var headers = {
         // add custom disposition as third element or keep it two elements if not
-        "Content-Disposition": ["form-data", 'name="' + field + '"'].concat(contentDisposition || []),
+        "Content-Disposition": ["form-data", 'name="' + escapeHeaderParam(field) + '"'].concat(contentDisposition || []),
         // if no content type. allow it to be empty array
         "Content-Type": [].concat(contentType || [])
       };
@@ -195451,7 +195454,7 @@ var require_form_data = __commonJS({
         filename = path3.basename(value.client._httpMessage.path || "");
       }
       if (filename) {
-        return 'filename="' + filename + '"';
+        return 'filename="' + escapeHeaderParam(filename) + '"';
       }
     };
     FormData.prototype._getContentType = function(value, options) {
@@ -198229,6 +198232,10 @@ var require_receiver = __commonJS({
        *     extensions
        * @param {Boolean} [options.isServer=false] Specifies whether to operate in
        *     client or server mode
+       * @param {Number} [options.maxBufferedChunks=0] The maximum number of
+       *     buffered data chunks
+       * @param {Number} [options.maxFragments=0] The maximum number of message
+       *     fragments
        * @param {Number} [options.maxPayload=0] The maximum allowed message length
        * @param {Boolean} [options.skipUTF8Validation=false] Specifies whether or
        *     not to skip UTF-8 validation for text and close messages
@@ -198239,6 +198246,8 @@ var require_receiver = __commonJS({
         this._binaryType = options.binaryType || BINARY_TYPES[0];
         this._extensions = options.extensions || {};
         this._isServer = !!options.isServer;
+        this._maxBufferedChunks = options.maxBufferedChunks | 0;
+        this._maxFragments = options.maxFragments | 0;
         this._maxPayload = options.maxPayload | 0;
         this._skipUTF8Validation = !!options.skipUTF8Validation;
         this[kWebSocket] = void 0;
@@ -198253,6 +198262,7 @@ var require_receiver = __commonJS({
         this._opcode = 0;
         this._totalPayloadLength = 0;
         this._messageLength = 0;
+        this._numFragments = 0;
         this._fragments = [];
         this._errored = false;
         this._loop = false;
@@ -198268,6 +198278,18 @@ var require_receiver = __commonJS({
        */
       _write(chunk, encoding, cb) {
         if (this._opcode === 8 && this._state == GET_INFO) return cb();
+        if (this._maxBufferedChunks > 0 && this._buffers.length >= this._maxBufferedChunks) {
+          cb(
+            this.createError(
+              RangeError,
+              "Too many buffered chunks",
+              false,
+              1008,
+              "WS_ERR_TOO_MANY_BUFFERED_PARTS"
+            )
+          );
+          return;
+        }
         this._bufferedBytes += chunk.length;
         this._buffers.push(chunk);
         this.startLoop(cb);
@@ -198591,6 +198613,17 @@ var require_receiver = __commonJS({
           this.controlMessage(data, cb);
           return;
         }
+        if (this._maxFragments > 0 && ++this._numFragments > this._maxFragments) {
+          const error2 = this.createError(
+            RangeError,
+            "Too many message fragments",
+            false,
+            1008,
+            "WS_ERR_TOO_MANY_BUFFERED_PARTS"
+          );
+          cb(error2);
+          return;
+        }
         if (this._compressed) {
           this._state = INFLATING;
           this.decompress(data, cb);
@@ -198648,6 +198681,7 @@ var require_receiver = __commonJS({
         this._totalPayloadLength = 0;
         this._messageLength = 0;
         this._fragmented = 0;
+        this._numFragments = 0;
         this._fragments = [];
         if (this._opcode === 2) {
           let data;
@@ -198791,6 +198825,9 @@ var require_sender = __commonJS({
   "node_modules/ws/lib/sender.js"(exports2, module2) {
     var { Duplex } = __require("stream");
     var { randomFillSync } = __require("crypto");
+    var {
+      types: { isUint8Array: isUint8Array2 }
+    } = __require("util");
     var PerMessageDeflate = require_permessage_deflate();
     var { EMPTY_BUFFER, kWebSocket, NOOP } = require_constants2();
     var { isBlob, isValidStatusCode } = require_validation();
@@ -198944,8 +198981,10 @@ var require_sender = __commonJS({
           buf.writeUInt16BE(code, 0);
           if (typeof data === "string") {
             buf.write(data, 2);
-          } else {
+          } else if (isUint8Array2(data)) {
             buf.set(data, 2);
+          } else {
+            throw new TypeError("Second argument must be a string or a Uint8Array");
           }
         }
         const options = {
@@ -199823,6 +199862,10 @@ var require_websocket = __commonJS({
        *     multiple times in the same tick
        * @param {Function} [options.generateMask] The function used to generate the
        *     masking key
+       * @param {Number} [options.maxBufferedChunks=0] The maximum number of
+       *     buffered data chunks
+       * @param {Number} [options.maxFragments=0] The maximum number of message
+       *     fragments
        * @param {Number} [options.maxPayload=0] The maximum allowed message size
        * @param {Boolean} [options.skipUTF8Validation=false] Specifies whether or
        *     not to skip UTF-8 validation for text and close messages
@@ -199834,6 +199877,8 @@ var require_websocket = __commonJS({
           binaryType: this.binaryType,
           extensions: this._extensions,
           isServer: this._isServer,
+          maxBufferedChunks: options.maxBufferedChunks,
+          maxFragments: options.maxFragments,
           maxPayload: options.maxPayload,
           skipUTF8Validation: options.skipUTF8Validation
         });
@@ -200133,6 +200178,8 @@ var require_websocket = __commonJS({
         autoPong: true,
         closeTimeout: CLOSE_TIMEOUT,
         protocolVersion: protocolVersions[1],
+        maxBufferedChunks: 256 * 1024,
+        maxFragments: 16 * 1024,
         maxPayload: 100 * 1024 * 1024,
         skipUTF8Validation: false,
         perMessageDeflate: true,
@@ -200375,6 +200422,8 @@ var require_websocket = __commonJS({
         websocket.setSocket(socket, head, {
           allowSynchronousEvents: opts.allowSynchronousEvents,
           generateMask: opts.generateMask,
+          maxBufferedChunks: opts.maxBufferedChunks,
+          maxFragments: opts.maxFragments,
           maxPayload: opts.maxPayload,
           skipUTF8Validation: opts.skipUTF8Validation
         });
@@ -200714,6 +200763,10 @@ var require_websocket_server = __commonJS({
        *     called
        * @param {Function} [options.handleProtocols] A hook to handle protocols
        * @param {String} [options.host] The hostname where to bind the server
+       * @param {Number} [options.maxBufferedChunks=262144] The maximum number of
+       *     buffered data chunks
+       * @param {Number} [options.maxFragments=16384] The maximum number of message
+       *     fragments
        * @param {Number} [options.maxPayload=104857600] The maximum allowed message
        *     size
        * @param {Boolean} [options.noServer=false] Enable no server mode
@@ -200735,6 +200788,8 @@ var require_websocket_server = __commonJS({
         options = {
           allowSynchronousEvents: true,
           autoPong: true,
+          maxBufferedChunks: 256 * 1024,
+          maxFragments: 16 * 1024,
           maxPayload: 100 * 1024 * 1024,
           skipUTF8Validation: false,
           perMessageDeflate: false,
@@ -201014,6 +201069,8 @@ var require_websocket_server = __commonJS({
         socket.removeListener("error", socketOnError);
         ws.setSocket(socket, head, {
           allowSynchronousEvents: this.options.allowSynchronousEvents,
+          maxBufferedChunks: this.options.maxBufferedChunks,
+          maxFragments: this.options.maxFragments,
           maxPayload: this.options.maxPayload,
           skipUTF8Validation: this.options.skipUTF8Validation
         });
@@ -208081,8 +208138,6 @@ function math(options) {
 
 // node_modules/katex/dist/katex.mjs
 var ParseError = class _ParseError extends Error {
-  // Error start position based on passed-in Token or ParseNode.
-  // Length of affected text based on passed-in Token or ParseNode.
   // The underlying error message without any context added.
   constructor(message, token) {
     var error2 = "KaTeX parse error: " + message;
@@ -208115,6 +208170,9 @@ var ParseError = class _ParseError extends Error {
     }
     super(error2);
     this.name = "ParseError";
+    this.position = void 0;
+    this.length = void 0;
+    this.rawMessage = void 0;
     Object.setPrototypeOf(this, _ParseError.prototype);
     this.position = start;
     if (start != null && end != null) {
@@ -208258,16 +208316,11 @@ var SETTINGS_SCHEMA = {
     cli: false
   }
 };
-function getDefaultValue(schema) {
-  if ("default" in schema) {
-    return schema.default;
+function getImplicitDefault(type) {
+  if (typeof type !== "string") {
+    return type.enum[0];
   }
-  var type = schema.type;
-  var defaultType = Array.isArray(type) ? type[0] : type;
-  if (typeof defaultType !== "string") {
-    return defaultType.enum[0];
-  }
-  switch (defaultType) {
+  switch (type) {
     case "boolean":
       return false;
     case "string":
@@ -208276,18 +208329,46 @@ function getDefaultValue(schema) {
       return 0;
     case "object":
       return {};
+    default:
+      throw new Error("Unexpected schema type; settings must declare an explicit default.");
   }
+}
+function getDefaultValue(schema) {
+  if (schema.default !== void 0) {
+    return schema.default;
+  }
+  var type = Array.isArray(schema.type) ? schema.type[0] : schema.type;
+  return getImplicitDefault(type);
+}
+function applySetting(target, prop, options, schema) {
+  var optionValue = options[prop];
+  target[prop] = optionValue !== void 0 ? schema.processor ? schema.processor(optionValue) : optionValue : getDefaultValue(schema);
 }
 var Settings = class {
   constructor(options) {
     if (options === void 0) {
       options = {};
     }
+    this.displayMode = void 0;
+    this.output = void 0;
+    this.leqno = void 0;
+    this.fleqn = void 0;
+    this.throwOnError = void 0;
+    this.errorColor = void 0;
+    this.macros = void 0;
+    this.minRuleThickness = void 0;
+    this.colorIsTextColor = void 0;
+    this.strict = void 0;
+    this.trust = void 0;
+    this.maxSize = void 0;
+    this.maxExpand = void 0;
+    this.globalGroup = void 0;
     options = options || {};
     for (var prop of Object.keys(SETTINGS_SCHEMA)) {
       var schema = SETTINGS_SCHEMA[prop];
-      var optionValue = options[prop];
-      this[prop] = optionValue !== void 0 ? schema.processor ? schema.processor(optionValue) : optionValue : getDefaultValue(schema);
+      if (schema) {
+        applySetting(this, prop, options, schema);
+      }
     }
   }
   /**
@@ -208360,6 +208441,9 @@ var Settings = class {
 };
 var Style = class {
   constructor(id, size, cramped) {
+    this.id = void 0;
+    this.size = void 0;
+    this.cramped = void 0;
     this.id = id;
     this.size = size;
     this.cramped = cramped;
@@ -208492,11 +208576,11 @@ var scriptData = [{
 }];
 function scriptFromCodepoint(codepoint) {
   for (var i = 0; i < scriptData.length; i++) {
-    var script = scriptData[i];
-    for (var _i = 0; _i < script.blocks.length; _i++) {
-      var block = script.blocks[_i];
+    var script2 = scriptData[i];
+    for (var _i = 0; _i < script2.blocks.length; _i++) {
+      var block = script2.blocks[_i];
       if (codepoint >= block[0] && codepoint <= block[1]) {
-        return script.name;
+        return script2.name;
       }
     }
   }
@@ -208670,7 +208754,7 @@ var path2 = {
 var tallDelim = function tallDelim2(label, midHeight) {
   switch (label) {
     case "lbrack":
-      return "M403 1759 V84 H666 V0 H319 V1759 v" + midHeight + " v1759 h347 v-84\nH403z M403 1759 V0 H319 V1759 v" + midHeight + " v1759 h84z";
+      return "M403 1759 V84 H666 V0 H319 V1759 v" + midHeight + " v1759 v84 h347 v-84\nH403z M403 1759 V0 H319 V1759 v" + midHeight + " v1759 v84 h84z";
     case "rbrack":
       return "M347 1759 V0 H0 V84 H263 V1759 v" + midHeight + " v1759 H0 v84 H347z\nM347 1759 V0 H263 V1759 v" + midHeight + " v1759 h84z";
     case "vert":
@@ -208693,9 +208777,18 @@ var tallDelim = function tallDelim2(label, midHeight) {
       throw new Error("Unknown stretchy delimiter.");
   }
 };
+function isMathDomNode(node) {
+  return "toText" in node;
+}
 var DocumentFragment = class {
   // Never used; needed for satisfying interface.
   constructor(children) {
+    this.children = void 0;
+    this.classes = void 0;
+    this.height = void 0;
+    this.depth = void 0;
+    this.maxFontSize = void 0;
+    this.style = void 0;
     this.children = children;
     this.classes = [];
     this.height = 0;
@@ -208727,8 +208820,12 @@ var DocumentFragment = class {
    * MathDomNode's only.
    */
   toText() {
-    var toText2 = (child) => child.toText();
-    return this.children.map(toText2).join("");
+    return this.children.map((child) => {
+      if (isMathDomNode(child)) {
+        return child.toText();
+      }
+      throw new Error("Expected MathDomNode with toText, got " + child.constructor.name);
+    }).join("");
   }
 };
 var ptPerUnit = {
@@ -208803,6 +208900,16 @@ var makeEm = function makeEm2(n) {
 var createClass = function createClass2(classes) {
   return classes.filter((cls) => cls).join(" ");
 };
+var cssStyleToString = function cssStyleToString2(style2) {
+  var styles2 = "";
+  for (var key of Object.keys(style2)) {
+    var value = style2[key];
+    if (value !== void 0) {
+      styles2 += hyphenate(key) + ":" + value + ";";
+    }
+  }
+  return styles2;
+};
 var initNode = function initNode2(classes, options, style2) {
   this.classes = classes || [];
   this.attributes = {};
@@ -208823,9 +208930,7 @@ var initNode = function initNode2(classes, options, style2) {
 var toNode = function toNode2(tagName) {
   var node = document.createElement(tagName);
   node.className = createClass(this.classes);
-  for (var key of Object.keys(this.style)) {
-    node.style[key] = this.style[key];
-  }
+  Object.assign(node.style, this.style);
   for (var attr of Object.keys(this.attributes)) {
     node.setAttribute(attr, this.attributes[attr]);
   }
@@ -208840,10 +208945,7 @@ var toMarkup = function toMarkup2(tagName) {
   if (this.classes.length) {
     markup += ' class="' + escape(createClass(this.classes)) + '"';
   }
-  var styles2 = "";
-  for (var key of Object.keys(this.style)) {
-    styles2 += hyphenate(key) + ":" + this.style[key] + ";";
-  }
+  var styles2 = cssStyleToString(this.style);
   if (styles2) {
     markup += ' style="' + escape(styles2) + '"';
   }
@@ -208862,6 +208964,15 @@ var toMarkup = function toMarkup2(tagName) {
 };
 var Span = class {
   constructor(classes, children, options, style2) {
+    this.children = void 0;
+    this.attributes = void 0;
+    this.classes = void 0;
+    this.height = void 0;
+    this.depth = void 0;
+    this.width = void 0;
+    this.maxFontSize = void 0;
+    this.style = void 0;
+    this.italic = void 0;
     initNode.call(this, classes, options, style2);
     this.children = children || [];
   }
@@ -208885,6 +208996,13 @@ var Span = class {
 };
 var Anchor = class {
   constructor(href, classes, children, options) {
+    this.children = void 0;
+    this.attributes = void 0;
+    this.classes = void 0;
+    this.height = void 0;
+    this.depth = void 0;
+    this.maxFontSize = void 0;
+    this.style = void 0;
     initNode.call(this, classes, options);
     this.children = children || [];
     this.setAttribute("href", href);
@@ -208904,6 +209022,13 @@ var Anchor = class {
 };
 var Img = class {
   constructor(src, alt, style2) {
+    this.src = void 0;
+    this.alt = void 0;
+    this.classes = void 0;
+    this.height = void 0;
+    this.depth = void 0;
+    this.maxFontSize = void 0;
+    this.style = void 0;
     this.alt = alt;
     this.src = src;
     this.classes = ["mord"];
@@ -208920,17 +209045,12 @@ var Img = class {
     node.src = this.src;
     node.alt = this.alt;
     node.className = "mord";
-    for (var key of Object.keys(this.style)) {
-      node.style[key] = this.style[key];
-    }
+    Object.assign(node.style, this.style);
     return node;
   }
   toMarkup() {
     var markup = '<img src="' + escape(this.src) + '"' + (' alt="' + escape(this.alt) + '"');
-    var styles2 = "";
-    for (var key of Object.keys(this.style)) {
-      styles2 += hyphenate(key) + ":" + this.style[key] + ";";
-    }
+    var styles2 = cssStyleToString(this.style);
     if (styles2) {
       markup += ' style="' + escape(styles2) + '"';
     }
@@ -208946,19 +209066,28 @@ var iCombinations = {
   "\xEC": "\u0131\u0300"
 };
 var SymbolNode = class {
-  constructor(text3, height, depth, italic, skew2, width, classes, style2) {
+  constructor(text3, height, depth, italic2, skew2, width, classes, style2) {
+    this.text = void 0;
+    this.height = void 0;
+    this.depth = void 0;
+    this.italic = void 0;
+    this.skew = void 0;
+    this.width = void 0;
+    this.maxFontSize = void 0;
+    this.classes = void 0;
+    this.style = void 0;
     this.text = text3;
     this.height = height || 0;
     this.depth = depth || 0;
-    this.italic = italic || 0;
+    this.italic = italic2 || 0;
     this.skew = skew2 || 0;
     this.width = width || 0;
     this.classes = classes || [];
     this.style = style2 || {};
     this.maxFontSize = 0;
-    var script = scriptFromCodepoint(this.text.charCodeAt(0));
-    if (script) {
-      this.classes.push(script + "_fallback");
+    var script2 = scriptFromCodepoint(this.text.charCodeAt(0));
+    if (script2) {
+      this.classes.push(script2 + "_fallback");
     }
     if (/[îïíì]/.test(this.text)) {
       this.text = iCombinations[this.text];
@@ -208982,9 +209111,9 @@ var SymbolNode = class {
       span = span || document.createElement("span");
       span.className = createClass(this.classes);
     }
-    for (var key of Object.keys(this.style)) {
+    if (Object.keys(this.style).length > 0) {
       span = span || document.createElement("span");
-      span.style[key] = this.style[key];
+      Object.assign(span.style, this.style);
     }
     if (span) {
       span.appendChild(node);
@@ -209009,9 +209138,7 @@ var SymbolNode = class {
     if (this.italic > 0) {
       styles2 += "margin-right:" + makeEm(this.italic) + ";";
     }
-    for (var key of Object.keys(this.style)) {
-      styles2 += hyphenate(key) + ":" + this.style[key] + ";";
-    }
+    styles2 += cssStyleToString(this.style);
     if (styles2) {
       needsSpan = true;
       markup += ' style="' + escape(styles2) + '"';
@@ -209029,6 +209156,8 @@ var SymbolNode = class {
 };
 var SvgNode = class {
   constructor(children, attributes) {
+    this.children = void 0;
+    this.attributes = void 0;
     this.children = children || [];
     this.attributes = attributes || {};
   }
@@ -209058,6 +209187,8 @@ var SvgNode = class {
 };
 var PathNode = class {
   constructor(pathName, alternate) {
+    this.pathName = void 0;
+    this.alternate = void 0;
     this.pathName = pathName;
     this.alternate = alternate;
   }
@@ -209081,6 +209212,7 @@ var PathNode = class {
 };
 var LineNode = class {
   constructor(attributes) {
+    this.attributes = void 0;
     this.attributes = attributes || {};
   }
   toNode() {
@@ -211397,21 +211529,6 @@ function getGlobalMetrics(size) {
   }
   return fontMetricsBySizeIndex[sizeIndex];
 }
-var ATOMS = {
-  "bin": 1,
-  "close": 1,
-  "inner": 1,
-  "open": 1,
-  "punct": 1,
-  "rel": 1
-};
-var NON_ATOMS = {
-  "accent-token": 1,
-  "mathord": 1,
-  "op-token": 1,
-  "spacing": 1,
-  "textord": 1
-};
 var symbols = {
   "math": {},
   "text": {}
@@ -211893,8 +212010,8 @@ defineSymbol(text, main, spacing, "\xA0", "\\ ");
 defineSymbol(text, main, spacing, "\xA0", " ");
 defineSymbol(text, main, spacing, "\xA0", "\\space");
 defineSymbol(text, main, spacing, "\xA0", "\\nobreakspace");
-defineSymbol(math2, main, spacing, null, "\\nobreak");
-defineSymbol(math2, main, spacing, null, "\\allowbreak");
+defineSymbol(math2, main, spacing, "", "\\nobreak");
+defineSymbol(math2, main, spacing, "", "\\allowbreak");
 defineSymbol(math2, main, punct, ",", ",");
 defineSymbol(math2, main, punct, ";", ";");
 defineSymbol(math2, ams, bin, "\u22BC", "\\barwedge", true);
@@ -212079,7 +212196,7 @@ defineSymbol(math2, ams, textord, "Z", "\u2124");
 defineSymbol(text, ams, textord, "Z", "\u2124");
 defineSymbol(math2, main, mathord, "h", "\u210E");
 defineSymbol(text, main, mathord, "h", "\u210E");
-var wideChar = "";
+var wideChar;
 for (_i3 = 0; _i3 < letters.length; _i3++) {
   _ch3 = letters.charAt(_i3);
   wideChar = String.fromCharCode(55349, 56320 + _i3);
@@ -212148,90 +212265,136 @@ for (_i5 = 0; _i5 < extraLatin.length; _i5++) {
 }
 var _ch5;
 var _i5;
+var boldUpright = {
+  mathClass: "mathbf",
+  textClass: "textbf",
+  font: "Main-Bold"
+};
+var italic = {
+  mathClass: "mathnormal",
+  textClass: "textit",
+  font: "Math-Italic"
+};
+var boldItalic = {
+  mathClass: "boldsymbol",
+  textClass: "boldsymbol",
+  font: "Main-BoldItalic"
+};
+var script = {
+  mathClass: "mathscr",
+  textClass: "textscr",
+  font: "Script-Regular"
+};
+var noFont = {
+  mathClass: "",
+  textClass: "",
+  font: ""
+};
+var fraktur = {
+  mathClass: "mathfrak",
+  textClass: "textfrak",
+  font: "Fraktur-Regular"
+};
+var doubleStruck = {
+  mathClass: "mathbb",
+  textClass: "textbb",
+  font: "AMS-Regular"
+};
+var boldFraktur = {
+  mathClass: "mathboldfrak",
+  textClass: "textboldfrak",
+  font: "Fraktur-Regular"
+};
+var sansSerif = {
+  mathClass: "mathsf",
+  textClass: "textsf",
+  font: "SansSerif-Regular"
+};
+var boldSansSerif = {
+  mathClass: "mathboldsf",
+  textClass: "textboldsf",
+  font: "SansSerif-Bold"
+};
+var italicSansSerif = {
+  mathClass: "mathitsf",
+  textClass: "textitsf",
+  font: "SansSerif-Italic"
+};
+var monospace = {
+  mathClass: "mathtt",
+  textClass: "texttt",
+  font: "Typewriter-Regular"
+};
 var wideLatinLetterData = [
-  ["mathbf", "textbf", "Main-Bold"],
-  // A-Z bold upright
-  ["mathbf", "textbf", "Main-Bold"],
-  // a-z bold upright
-  ["mathnormal", "textit", "Math-Italic"],
-  // A-Z italic
-  ["mathnormal", "textit", "Math-Italic"],
-  // a-z italic
-  ["boldsymbol", "boldsymbol", "Main-BoldItalic"],
-  // A-Z bold italic
-  ["boldsymbol", "boldsymbol", "Main-BoldItalic"],
-  // a-z bold italic
+  boldUpright,
+  boldUpright,
+  // A-Z, a-z
+  italic,
+  italic,
+  // A-Z, a-z
+  boldItalic,
+  boldItalic,
+  // A-Z, a-z
   // Map fancy A-Z letters to script, not calligraphic.
   // This aligns with unicode-math and math fonts (except Cambria Math).
-  ["mathscr", "textscr", "Script-Regular"],
-  // A-Z script
-  ["", "", ""],
-  // a-z script.  No font
-  ["", "", ""],
-  // A-Z bold script. No font
-  ["", "", ""],
-  // a-z bold script. No font
-  ["mathfrak", "textfrak", "Fraktur-Regular"],
-  // A-Z Fraktur
-  ["mathfrak", "textfrak", "Fraktur-Regular"],
-  // a-z Fraktur
-  ["mathbb", "textbb", "AMS-Regular"],
-  // A-Z double-struck
-  ["mathbb", "textbb", "AMS-Regular"],
-  // k double-struck
+  script,
+  noFont,
+  // A-Z script, a-z — no font
+  noFont,
+  noFont,
+  // A-Z bold script, a-z bold script — no font
+  fraktur,
+  fraktur,
+  // A-Z, a-z
+  doubleStruck,
+  doubleStruck,
+  // A-Z double-struck, k double-struck
   // Note that we are using a bold font, but font metrics for regular Fraktur.
-  ["mathboldfrak", "textboldfrak", "Fraktur-Regular"],
-  // A-Z bold Fraktur
-  ["mathboldfrak", "textboldfrak", "Fraktur-Regular"],
-  // a-z bold Fraktur
-  ["mathsf", "textsf", "SansSerif-Regular"],
-  // A-Z sans-serif
-  ["mathsf", "textsf", "SansSerif-Regular"],
-  // a-z sans-serif
-  ["mathboldsf", "textboldsf", "SansSerif-Bold"],
-  // A-Z bold sans-serif
-  ["mathboldsf", "textboldsf", "SansSerif-Bold"],
-  // a-z bold sans-serif
-  ["mathitsf", "textitsf", "SansSerif-Italic"],
-  // A-Z italic sans-serif
-  ["mathitsf", "textitsf", "SansSerif-Italic"],
-  // a-z italic sans-serif
-  ["", "", ""],
-  // A-Z bold italic sans. No font
-  ["", "", ""],
-  // a-z bold italic sans. No font
-  ["mathtt", "texttt", "Typewriter-Regular"],
-  // A-Z monospace
-  ["mathtt", "texttt", "Typewriter-Regular"]
-  // a-z monospace
+  boldFraktur,
+  boldFraktur,
+  // A-Z, a-z
+  sansSerif,
+  sansSerif,
+  // A-Z, a-z
+  boldSansSerif,
+  boldSansSerif,
+  // A-Z, a-z
+  italicSansSerif,
+  italicSansSerif,
+  // A-Z, a-z
+  noFont,
+  noFont,
+  // A-Z bold italic sans, a-z bold italic sans - no font
+  monospace,
+  monospace
+  // A-Z, a-z
 ];
 var wideNumeralData = [
-  ["mathbf", "textbf", "Main-Bold"],
-  // 0-9 bold
-  ["", "", ""],
+  boldUpright,
+  // 0-9
+  noFont,
   // 0-9 double-struck. No KaTeX font.
-  ["mathsf", "textsf", "SansSerif-Regular"],
-  // 0-9 sans-serif
-  ["mathboldsf", "textboldsf", "SansSerif-Bold"],
-  // 0-9 bold sans-serif
-  ["mathtt", "texttt", "Typewriter-Regular"]
-  // 0-9 monospace
+  sansSerif,
+  // 0-9
+  boldSansSerif,
+  // 0-9
+  monospace
+  // 0-9
 ];
-var wideCharacterFont = (wideChar2, mode) => {
+var wideCharacterFont = (wideChar2) => {
   var H = wideChar2.charCodeAt(0);
   var L = wideChar2.charCodeAt(1);
   var codePoint = (H - 55296) * 1024 + (L - 56320) + 65536;
-  var j = mode === "math" ? 0 : 1;
   if (119808 <= codePoint && codePoint < 120484) {
     var i = Math.floor((codePoint - 119808) / 26);
-    return [wideLatinLetterData[i][2], wideLatinLetterData[i][j]];
+    return wideLatinLetterData[i];
   } else if (120782 <= codePoint && codePoint <= 120831) {
     var _i = Math.floor((codePoint - 120782) / 10);
-    return [wideNumeralData[_i][2], wideNumeralData[_i][j]];
+    return wideNumeralData[_i];
   } else if (codePoint === 120485 || codePoint === 120486) {
-    return [wideLatinLetterData[0][2], wideLatinLetterData[0][j]];
+    return wideLatinLetterData[0];
   } else if (120486 < codePoint && codePoint < 120782) {
-    return ["", ""];
+    return noFont;
   } else {
     throw new ParseError("Unsupported character: " + wideChar2);
   }
@@ -212254,11 +212417,11 @@ var makeSymbol = function makeSymbol2(value, fontName, mode, options, classes) {
   value = lookup.value;
   var symbolNode;
   if (metrics) {
-    var italic = metrics.italic;
+    var italic2 = metrics.italic;
     if (mode === "text" || options && options.font === "mathit") {
-      italic = 0;
+      italic2 = 0;
     }
-    symbolNode = new SymbolNode(value, metrics.height, metrics.depth, italic, metrics.skew, metrics.width, classes);
+    symbolNode = new SymbolNode(value, metrics.height, metrics.depth, italic2, metrics.skew, metrics.width, classes);
   } else {
     typeof console !== "undefined" && console.warn("No character metrics " + ("for '" + value + "' in style '" + fontName + "' and mode '" + mode + "'"));
     symbolNode = new SymbolNode(value, 0, 0, 0, 0, 0, classes);
@@ -212287,7 +212450,7 @@ var mathsym = function mathsym2(value, mode, options, classes) {
     return makeSymbol(value, "AMS-Regular", mode, options, classes.concat(["amsrm"]));
   }
 };
-var boldsymbol = function boldsymbol2(value, mode, options, classes, type) {
+var boldSymbol = function boldSymbol2(value, mode, type) {
   if (type !== "textord" && lookupSymbol(value, "Math-BoldItalic", mode).metrics) {
     return {
       fontName: "Math-BoldItalic",
@@ -212304,28 +212467,36 @@ var makeOrd = function makeOrd2(group, options, type) {
   var mode = group.mode;
   var text3 = group.text;
   var classes = ["mord"];
-  var isFont = mode === "math" || mode === "text" && options.font;
-  var fontOrFamily = isFont ? options.font : options.fontFamily;
+  var {
+    font,
+    fontFamily,
+    fontWeight,
+    fontShape
+  } = options;
+  var useFont = mode === "math" || mode === "text" && !!font;
+  var fontOrFamily = useFont ? font : fontFamily;
   var wideFontName = "";
   var wideFontClass = "";
   if (text3.charCodeAt(0) === 55349) {
-    [wideFontName, wideFontClass] = wideCharacterFont(text3, mode);
+    var wideCharData = wideCharacterFont(text3);
+    wideFontName = wideCharData.font;
+    wideFontClass = wideCharData[mode + "Class"];
   }
-  if (wideFontName.length > 0) {
+  if (wideFontName) {
     return makeSymbol(text3, wideFontName, mode, options, classes.concat(wideFontClass));
   } else if (fontOrFamily) {
     var fontName;
     var fontClasses;
     if (fontOrFamily === "boldsymbol") {
-      var fontData = boldsymbol(text3, mode, options, classes, type);
+      var fontData = boldSymbol(text3, mode, type);
       fontName = fontData.fontName;
       fontClasses = [fontData.fontClass];
-    } else if (isFont) {
-      fontName = fontMap[fontOrFamily].fontName;
-      fontClasses = [fontOrFamily];
+    } else if (useFont) {
+      fontName = fontMap[font].fontName;
+      fontClasses = [font];
     } else {
-      fontName = retrieveTextFontName(fontOrFamily, options.fontWeight, options.fontShape);
-      fontClasses = [fontOrFamily, options.fontWeight, options.fontShape];
+      fontName = retrieveTextFontName(fontFamily, fontWeight, fontShape);
+      fontClasses = [fontFamily, fontWeight, fontShape];
     }
     if (lookupSymbol(text3, fontName, mode).metrics) {
       return makeSymbol(text3, fontName, mode, options, classes.concat(fontClasses));
@@ -212340,16 +212511,16 @@ var makeOrd = function makeOrd2(group, options, type) {
   if (type === "mathord") {
     return makeSymbol(text3, "Math-Italic", mode, options, classes.concat(["mathnormal"]));
   } else if (type === "textord") {
-    var font = symbols[mode][text3] && symbols[mode][text3].font;
-    if (font === "ams") {
-      var _fontName = retrieveTextFontName("amsrm", options.fontWeight, options.fontShape);
-      return makeSymbol(text3, _fontName, mode, options, classes.concat("amsrm", options.fontWeight, options.fontShape));
-    } else if (font === "main" || !font) {
-      var _fontName2 = retrieveTextFontName("textrm", options.fontWeight, options.fontShape);
-      return makeSymbol(text3, _fontName2, mode, options, classes.concat(options.fontWeight, options.fontShape));
+    var _font = symbols[mode][text3] && symbols[mode][text3].font;
+    if (_font === "ams") {
+      var _fontName = retrieveTextFontName("amsrm", fontWeight, fontShape);
+      return makeSymbol(text3, _fontName, mode, options, classes.concat("amsrm", fontWeight, fontShape));
+    } else if (_font === "main" || !_font) {
+      var _fontName2 = retrieveTextFontName("textrm", fontWeight, fontShape);
+      return makeSymbol(text3, _fontName2, mode, options, classes.concat(fontWeight, fontShape));
     } else {
-      var _fontName3 = retrieveTextFontName(font, options.fontWeight, options.fontShape);
-      return makeSymbol(text3, _fontName3, mode, options, classes.concat(_fontName3, options.fontWeight, options.fontShape));
+      var _fontName3 = retrieveTextFontName(_font, fontWeight, fontShape);
+      return makeSymbol(text3, _fontName3, mode, options, classes.concat(_fontName3, fontWeight, fontShape));
     }
   } else {
     throw new Error("unexpected type: " + type + " in makeOrd");
@@ -212558,8 +212729,9 @@ var makeGlue = (measurement, options) => {
   rule.style.marginRight = makeEm(size);
   return rule;
 };
-var retrieveTextFontName = function retrieveTextFontName2(fontFamily, fontWeight, fontShape) {
-  var baseFontName = "";
+var retrieveTextFontName = (fontFamily, fontWeight, fontShape) => {
+  var baseFontName;
+  var fontStylesName;
   switch (fontFamily) {
     case "amsrm":
       baseFontName = "AMS";
@@ -212576,12 +212748,11 @@ var retrieveTextFontName = function retrieveTextFontName2(fontFamily, fontWeight
     default:
       baseFontName = fontFamily;
   }
-  var fontStylesName;
   if (fontWeight === "textbf" && fontShape === "textit") {
     fontStylesName = "BoldItalic";
   } else if (fontWeight === "textbf") {
     fontStylesName = "Bold";
-  } else if (fontWeight === "textit") {
+  } else if (fontShape === "textit") {
     fontStylesName = "Italic";
   } else {
     fontStylesName = "Regular";
@@ -213048,6 +213219,10 @@ function newDocumentFragment(children) {
 }
 var MathNode = class {
   constructor(type, children, classes) {
+    this.type = void 0;
+    this.attributes = void 0;
+    this.children = void 0;
+    this.classes = void 0;
     this.type = type;
     this.attributes = {};
     this.children = children || [];
@@ -213123,6 +213298,7 @@ var MathNode = class {
 };
 var TextNode = class {
   constructor(text3) {
+    this.text = void 0;
     this.text = text3;
   }
   /**
@@ -213151,6 +213327,8 @@ var SpaceNode = class {
    * Create a Space node with width given in CSS ems.
    */
   constructor(width) {
+    this.width = void 0;
+    this.character = void 0;
     this.width = width;
     if (width >= 0.05555 && width <= 0.05556) {
       this.character = "\u200A";
@@ -213220,49 +213398,48 @@ var makeRow = function makeRow2(body) {
     return new MathNode("mrow", body);
   }
 };
-var getVariant = function getVariant2(group, options) {
-  if (options.fontFamily === "texttt") {
-    return "monospace";
-  } else if (options.fontFamily === "textsf") {
-    if (options.fontShape === "textit" && options.fontWeight === "textbf") {
-      return "sans-serif-bold-italic";
+var mathFontVariants = {
+  mathit: "italic",
+  boldsymbol: (group) => group.type === "textord" ? "bold" : "bold-italic",
+  mathbf: "bold",
+  mathbb: "double-struck",
+  mathsfit: "sans-serif-italic",
+  mathfrak: "fraktur",
+  mathscr: "script",
+  mathcal: "script",
+  mathsf: "sans-serif",
+  mathtt: "monospace"
+};
+var getVariant = (group, options) => {
+  if (group.mode === "text") {
+    if (options.fontFamily === "texttt") {
+      return "monospace";
+    } else if (options.fontFamily === "textsf") {
+      if (options.fontShape === "textit" && options.fontWeight === "textbf") {
+        return "sans-serif-bold-italic";
+      } else if (options.fontShape === "textit") {
+        return "sans-serif-italic";
+      } else if (options.fontWeight === "textbf") {
+        return "bold-sans-serif";
+      } else {
+        return "sans-serif";
+      }
+    } else if (options.fontShape === "textit" && options.fontWeight === "textbf") {
+      return "bold-italic";
     } else if (options.fontShape === "textit") {
-      return "sans-serif-italic";
+      return "italic";
     } else if (options.fontWeight === "textbf") {
-      return "bold-sans-serif";
-    } else {
-      return "sans-serif";
+      return "bold";
     }
-  } else if (options.fontShape === "textit" && options.fontWeight === "textbf") {
-    return "bold-italic";
-  } else if (options.fontShape === "textit") {
-    return "italic";
-  } else if (options.fontWeight === "textbf") {
-    return "bold";
   }
   var font = options.font;
   if (!font || font === "mathnormal") {
     return null;
   }
   var mode = group.mode;
-  if (font === "mathit") {
-    return "italic";
-  } else if (font === "boldsymbol") {
-    return group.type === "textord" ? "bold" : "bold-italic";
-  } else if (font === "mathbf") {
-    return "bold";
-  } else if (font === "mathbb") {
-    return "double-struck";
-  } else if (font === "mathsfit") {
-    return "sans-serif-italic";
-  } else if (font === "mathfrak") {
-    return "fraktur";
-  } else if (font === "mathscr" || font === "mathcal") {
-    return "script";
-  } else if (font === "mathsf") {
-    return "sans-serif";
-  } else if (font === "mathtt") {
-    return "monospace";
+  var mathVariant = mathFontVariants[font];
+  if (mathVariant) {
+    return typeof mathVariant === "function" ? mathVariant(group) : mathVariant;
   }
   var text3 = group.text;
   if (noVariantSymbols.has(text3)) {
@@ -213350,8 +213527,7 @@ var buildGroup2 = function buildGroup3(group, options) {
     return new MathNode("mrow");
   }
   if (_mathmlGroupBuilders[group.type]) {
-    var result = _mathmlGroupBuilders[group.type](group, options);
-    return result;
+    return _mathmlGroupBuilders[group.type](group, options);
   } else {
     throw new ParseError("Got group of unknown type: '" + group.type + "'");
   }
@@ -213421,6 +213597,19 @@ var sizeAtStyle = function sizeAtStyle2(size, style2) {
 };
 var Options = class _Options {
   constructor(data) {
+    this.style = void 0;
+    this.color = void 0;
+    this.size = void 0;
+    this.textSize = void 0;
+    this.phantom = void 0;
+    this.font = void 0;
+    this.fontFamily = void 0;
+    this.fontWeight = void 0;
+    this.fontShape = void 0;
+    this.sizeMultiplier = void 0;
+    this.maxSize = void 0;
+    this.minRuleThickness = void 0;
+    this._fontMetrics = void 0;
     this.style = data.style;
     this.color = data.color;
     this.size = data.size || _Options.BASESIZE;
@@ -213776,9 +213965,8 @@ var stretchySvg = function stretchySvg2(group, options) {
   function buildSvgSpan_() {
     var viewBoxWidth = 4e5;
     var label = group.label.slice(1);
-    if (wideAccentLabels.has(label)) {
-      var grp = group;
-      var numChars = grp.base.type === "ordgroup" ? grp.base.body.length : 1;
+    if (wideAccentLabels.has(label) && "base" in group) {
+      var numChars = group.base.type === "ordgroup" ? group.base.body.length : 1;
       var viewBoxHeight;
       var pathName;
       var _height;
@@ -213823,15 +214011,20 @@ var stretchySvg = function stretchySvg2(group, options) {
     } else {
       var spans = [];
       var data = katexImagesData[label];
+      if (!data) {
+        throw new Error('No SVG data for "' + label + '".');
+      }
       var [paths, _minWidth, _viewBoxHeight] = data;
       var _height2 = _viewBoxHeight / 1e3;
       var numSvgChildren = paths.length;
       var widthClasses;
       var aligns;
       if (numSvgChildren === 1) {
-        var align1 = data[3];
+        if (data.length !== 4) {
+          throw new Error('Expected 4-tuple for single-path SVG data "' + label + '".');
+        }
         widthClasses = ["hide-tail"];
-        aligns = [align1];
+        aligns = [data[3]];
       } else if (numSvgChildren === 2) {
         widthClasses = ["halfarrow-left", "halfarrow-right"];
         aligns = ["xMinYMin", "xMaxYMin"];
@@ -213921,6 +214114,24 @@ var stretchyEnclose = function stretchyEnclose2(inner2, label, topPad, bottomPad
   img.style.height = makeEm(totalHeight);
   return img;
 };
+var ATOMS = {
+  "bin": 1,
+  "close": 1,
+  "inner": 1,
+  "open": 1,
+  "punct": 1,
+  "rel": 1
+};
+var NON_ATOMS = {
+  "accent-token": 1,
+  "mathord": 1,
+  "op-token": 1,
+  "spacing": 1,
+  "textord": 1
+};
+function isAtom(value) {
+  return value in ATOMS;
+}
 function assertNodeType(node, type) {
   if (!node || node.type !== type) {
     throw new Error("Expected node of type " + type + ", but got " + (node ? "node of type " + node.type : String(node)));
@@ -214235,7 +214446,8 @@ defineFunction({
         }, {
           type: "elem",
           elem: arrowBody,
-          shift: arrowShift
+          shift: arrowShift,
+          wrapperClasses: ["svg-align"]
         }, {
           type: "elem",
           elem: lowerGroup,
@@ -214252,11 +214464,11 @@ defineFunction({
         }, {
           type: "elem",
           elem: arrowBody,
-          shift: arrowShift
+          shift: arrowShift,
+          wrapperClasses: ["svg-align"]
         }]
       });
     }
-    vlist.children[0].children[0].children[1].classes.push("svg-align");
     return makeSpan(["mrel", "x-arrow"], [vlist], options);
   },
   mathmlBuilder(group, options) {
@@ -214464,7 +214676,8 @@ var newCell = () => {
     type: "styling",
     body: [],
     mode: "math",
-    style: "display"
+    style: "display",
+    resetFont: true
   };
 };
 var isStartOfArrow = (node) => {
@@ -214586,8 +214799,9 @@ function parseCD(parser) {
           type: "styling",
           body: [arrow],
           mode: "math",
-          style: "display"
+          style: "display",
           // CD is always displaystyle.
+          resetFont: true
         };
         row2.push(wrappedArrow);
         cell2 = newCell();
@@ -215310,9 +215524,9 @@ var makeSqrtImage = function makeSqrtImage2(height, options) {
   var sizeMultiplier = newOptions.sizeMultiplier;
   var extraVinculum = Math.max(0, options.minRuleThickness - options.fontMetrics().sqrtRuleThickness);
   var span;
-  var spanHeight = 0;
-  var texHeight = 0;
-  var viewBoxHeight = 0;
+  var spanHeight;
+  var texHeight;
+  var viewBoxHeight;
   var advanceWidth;
   if (delim.type === "small") {
     viewBoxHeight = 1e3 + 1e3 * extraVinculum + vbPad;
@@ -215570,6 +215784,9 @@ var delimiterSizes = {
   }
 };
 var delimiters = /* @__PURE__ */ new Set(["(", "\\lparen", ")", "\\rparen", "[", "\\lbrack", "]", "\\rbrack", "\\{", "\\lbrace", "\\}", "\\rbrace", "\\lfloor", "\\rfloor", "\u230A", "\u230B", "\\lceil", "\\rceil", "\u2308", "\u2309", "<", ">", "\\langle", "\u27E8", "\\rangle", "\u27E9", "\\lt", "\\gt", "\\lvert", "\\rvert", "\\lVert", "\\rVert", "\\lgroup", "\\rgroup", "\u27EE", "\u27EF", "\\lmoustache", "\\rmoustache", "\u23B0", "\u23B1", "/", "\\backslash", "|", "\\vert", "\\|", "\\Vert", "\\uparrow", "\\Uparrow", "\\downarrow", "\\Downarrow", "\\updownarrow", "\\Updownarrow", "."]);
+function isMiddleDelimNode(node) {
+  return "isMiddle" in node;
+}
 function checkDelimiter(delim, context) {
   var symDelim = checkSymbolNodeType(delim);
   if (symDelim && delimiters.has(symDelim.text)) {
@@ -215678,7 +215895,8 @@ defineFunction({
     var innerDepth = 0;
     var hadMiddle = false;
     for (var i = 0; i < inner2.length; i++) {
-      if (inner2[i].isMiddle) {
+      var node = inner2[i];
+      if (isMiddleDelimNode(node)) {
         hadMiddle = true;
       } else {
         innerHeight = Math.max(inner2[i].height, innerHeight);
@@ -215697,8 +215915,8 @@ defineFunction({
     if (hadMiddle) {
       for (var _i = 1; _i < inner2.length; _i++) {
         var middleDelim = inner2[_i];
-        var isMiddle = middleDelim.isMiddle;
-        if (isMiddle) {
+        if (isMiddleDelimNode(middleDelim)) {
+          var isMiddle = middleDelim.isMiddle;
           inner2[_i] = makeLeftRightDelim(isMiddle.delim, innerHeight, innerDepth, isMiddle.options, group.mode, []);
         }
       }
@@ -215756,11 +215974,10 @@ defineFunction({
       middleDelim = makeNullDelimiter(options, []);
     } else {
       middleDelim = makeSizedDelim(group.delim, 1, options, group.mode, []);
-      var isMiddle = {
+      middleDelim.isMiddle = {
         delim: group.delim,
         options
       };
-      middleDelim.isMiddle = isMiddle;
     }
     return middleDelim;
   },
@@ -215778,7 +215995,7 @@ var htmlBuilder$7 = (group, options) => {
   var label = group.label.slice(1);
   var scale = options.sizeMultiplier;
   var img;
-  var imgShift = 0;
+  var imgShift;
   var isSingleChar = isCharacterBox(group.body);
   if (label === "sout") {
     img = makeSpan(["stretchy", "sout"]);
@@ -215818,8 +216035,8 @@ var htmlBuilder$7 = (group, options) => {
     } else {
       inner2.classes.push("boxpad");
     }
-    var topPad = 0;
-    var bottomPad = 0;
+    var topPad;
+    var bottomPad;
     var ruleThickness = 0;
     if (/box/.test(label)) {
       ruleThickness = Math.max(
@@ -215902,7 +216119,7 @@ var htmlBuilder$7 = (group, options) => {
   }
 };
 var mathmlBuilder$6 = (group, options) => {
-  var fboxsep = 0;
+  var fboxsep;
   var node = new MathNode(group.label.includes("colorbox") ? "mpadded" : "menclose", [buildGroup2(group.body, options)]);
   switch (group.label) {
     case "\\cancel":
@@ -215954,7 +216171,7 @@ defineFunction({
   props: {
     numArgs: 2,
     allowedInText: true,
-    argTypes: ["color", "text"]
+    argTypes: ["color", "hbox"]
   },
   handler(_ref, args, optArgs) {
     var {
@@ -215980,7 +216197,7 @@ defineFunction({
   props: {
     numArgs: 3,
     allowedInText: true,
-    argTypes: ["color", "color", "text"]
+    argTypes: ["color", "color", "hbox"]
   },
   handler(_ref2, args, optArgs) {
     var {
@@ -216122,11 +216339,11 @@ function defineMacro(name, body) {
   _macros[name] = body;
 }
 var SourceLocation = class _SourceLocation {
-  // The + prefix indicates that these fields aren't writeable
-  // Lexer holding the input string.
-  // Start offset, zero-based inclusive.
   // End offset, zero-based exclusive.
   constructor(lexer, start, end) {
+    this.lexer = void 0;
+    this.start = void 0;
+    this.end = void 0;
     this.lexer = lexer;
     this.start = start;
     this.end = end;
@@ -216150,9 +216367,12 @@ var SourceLocation = class _SourceLocation {
   }
 };
 var Token = class _Token {
-  // don't expand the token
   // used in \noexpand
   constructor(text3, loc) {
+    this.text = void 0;
+    this.loc = void 0;
+    this.noexpand = void 0;
+    this.treatAsRelax = void 0;
     this.text = text3;
     this.loc = loc;
   }
@@ -216258,6 +216478,7 @@ function parseArray(parser, _ref, style2) {
         type: "styling",
         mode: parser.mode,
         style: style2,
+        resetFont: true,
         body: [cell2]
       };
     }
@@ -216368,7 +216589,12 @@ var htmlBuilder$6 = function htmlBuilder(group, options) {
     if (nc < inrow.length) {
       nc = inrow.length;
     }
-    var outrow = new Array(inrow.length);
+    var outrow = {
+      cells: new Array(inrow.length),
+      height: 0,
+      depth: 0,
+      pos: 0
+    };
     for (c = 0; c < inrow.length; ++c) {
       var elt = buildGroup$1(inrow[c], options);
       if (depth < elt.depth) {
@@ -216377,7 +216603,7 @@ var htmlBuilder$6 = function htmlBuilder(group, options) {
       if (height < elt.height) {
         height = elt.height;
       }
-      outrow[c] = elt;
+      outrow.cells[c] = elt;
     }
     var rowGap = group.rowGaps[r];
     var gap = 0;
@@ -216482,7 +216708,7 @@ var htmlBuilder$6 = function htmlBuilder(group, options) {
     var colElems = [];
     for (r = 0; r < nr; ++r) {
       var row2 = body[r];
-      var elem = row2[c];
+      var elem = row2.cells[c];
       if (!elem) {
         continue;
       }
@@ -217075,8 +217301,7 @@ var mathmlBuilder$4 = (group, options) => {
 var fontAliases = {
   "\\Bbb": "\\mathbb",
   "\\bold": "\\mathbf",
-  "\\frak": "\\mathfrak",
-  "\\bm": "\\boldsymbol"
+  "\\frak": "\\mathfrak"
 };
 defineFunction({
   type: "font",
@@ -217165,11 +217390,10 @@ defineFunction({
       mode
     } = parser;
     var body = parser.parseExpression(true, breakOnTokenText);
-    var style2 = "math" + funcName.slice(1);
     return {
       type: "font",
       mode,
-      font: style2,
+      font: "math" + funcName.slice(1),
       body: {
         type: "ordgroup",
         mode: parser.mode,
@@ -217604,17 +217828,18 @@ var htmlBuilder$3 = (grp, options) => {
         size: 0.1
       }, {
         type: "elem",
-        elem: braceBody
+        elem: braceBody,
+        wrapperClasses: ["svg-align"]
       }]
     });
-    vlist.children[0].children[0].children[1].classes.push("svg-align");
   } else {
     vlist = makeVList({
       positionType: "bottom",
       positionData: body.depth + 0.1 + braceBody.height,
       children: [{
         type: "elem",
-        elem: braceBody
+        elem: braceBody,
+        wrapperClasses: ["svg-align"]
       }, {
         type: "kern",
         size: 0.1
@@ -217623,7 +217848,6 @@ var htmlBuilder$3 = (grp, options) => {
         elem: body
       }]
     });
-    vlist.children[0].children[0].children[0].classes.push("svg-align");
   }
   if (supSubGroup) {
     var vSpan = makeSpan(["minner", group.isOver ? "mover" : "munder"], [vlist], options);
@@ -217791,11 +218015,11 @@ defineFunction({
     };
   },
   htmlBuilder(group, options) {
-    var elements = buildExpression$1(group.body, options, false);
+    var elements = buildExpression$1(group.body, options.withFont(""), false);
     return makeFragment(elements);
   },
   mathmlBuilder(group, options) {
-    return new MathNode("mrow", buildExpression2(group.body, options));
+    return new MathNode("mrow", buildExpression2(group.body, options.withFont("")));
   }
 });
 defineFunction({
@@ -218172,6 +218396,7 @@ defineFunction({
       type: "styling",
       mode: parser.mode,
       style: "text",
+      resetFont: true,
       body
     };
   }
@@ -218354,6 +218579,7 @@ var htmlBuilder$2 = (grp, options) => {
     large = true;
   }
   var base3;
+  var symbolItalic;
   if (group.symbol) {
     var fontName = large ? "Size2-Regular" : "Size1-Regular";
     var stash = "";
@@ -218362,8 +218588,8 @@ var htmlBuilder$2 = (grp, options) => {
       group.name = stash === "oiint" ? "\\iint" : "\\iiint";
     }
     base3 = makeSymbol(group.name, fontName, "math", options, ["mop", "op-symbol", large ? "large-op" : "small-op"]);
+    symbolItalic = base3.italic;
     if (stash.length > 0) {
-      var italic = base3.italic;
       var oval = staticSvg(stash + "Size" + (large ? "2" : "1"), options);
       base3 = makeVList({
         positionType: "individualShift",
@@ -218379,7 +218605,7 @@ var htmlBuilder$2 = (grp, options) => {
       });
       group.name = "\\" + stash;
       base3.classes.unshift("mop");
-      base3.italic = italic;
+      base3.italic = symbolItalic;
     }
   } else if (group.body) {
     var inner2 = buildExpression$1(group.body, options, true);
@@ -218399,8 +218625,9 @@ var htmlBuilder$2 = (grp, options) => {
   var baseShift = 0;
   var slant = 0;
   if ((base3 instanceof SymbolNode || group.name === "\\oiint" || group.name === "\\oiiint") && !group.suppressBaseShift) {
+    var _base$italic;
     baseShift = (base3.height - base3.depth) / 2 - options.fontMetrics().axisHeight;
-    slant = base3.italic || 0;
+    slant = (_base$italic = base3.italic) != null ? _base$italic : 0;
   }
   if (hasLimits) {
     return assembleSupSub(base3, supGroup, subGroup, options, style2, slant, baseShift);
@@ -218993,7 +219220,7 @@ defineFunction({
     var smashDepth = false;
     var tbArg = optArgs[0] && assertNodeType(optArgs[0], "ordgroup");
     if (tbArg) {
-      var letter = "";
+      var letter;
       for (var i = 0; i < tbArg.body.length; ++i) {
         var node = tbArg.body[i];
         letter = assertSymbolNodeType(node).text;
@@ -219158,6 +219385,9 @@ var styleMap = {
   "script": Style$1.SCRIPT,
   "scriptscript": Style$1.SCRIPTSCRIPT
 };
+function isStyleStr(s2) {
+  return s2 in styleMap;
+}
 defineFunction({
   type: "styling",
   names: ["\\displaystyle", "\\textstyle", "\\scriptstyle", "\\scriptscriptstyle"],
@@ -219174,6 +219404,9 @@ defineFunction({
     } = _ref;
     var body = parser.parseExpression(true, breakOnTokenText);
     var style2 = funcName.slice(1, funcName.length - 5);
+    if (!isStyleStr(style2)) {
+      throw new Error("Unknown style: " + style2);
+    }
     return {
       type: "styling",
       mode: parser.mode,
@@ -219185,12 +219418,18 @@ defineFunction({
   },
   htmlBuilder(group, options) {
     var newStyle = styleMap[group.style];
-    var newOptions = options.havingStyle(newStyle).withFont("");
+    var newOptions = options.havingStyle(newStyle);
+    if (group.resetFont) {
+      newOptions = newOptions.withFont("");
+    }
     return sizingGroup(group.body, newOptions, options);
   },
   mathmlBuilder(group, options) {
     var newStyle = styleMap[group.style];
     var newOptions = options.havingStyle(newStyle);
+    if (group.resetFont) {
+      newOptions = newOptions.withFont("");
+    }
     var inner2 = buildExpression2(group.body, newOptions);
     var node = new MathNode("mstyle", inner2);
     var styleAttributes = {
@@ -219271,7 +219510,8 @@ defineFunctionBuilders({
     if (subm) {
       var isOiint = group.base && group.base.type === "op" && group.base.name && (group.base.name === "\\oiint" || group.base.name === "\\oiiint");
       if (base3 instanceof SymbolNode || isOiint) {
-        marginLeft = makeEm(-base3.italic);
+        var _base$italic;
+        marginLeft = makeEm(-((_base$italic = base3.italic) != null ? _base$italic : 0));
       }
     }
     var supsub;
@@ -219718,9 +219958,11 @@ var tokenRegexString = "(" + spaceRegexString + "+)|" + // whitespace
 ("|" + controlWordWhitespaceRegexString) + // \macroName + spaces
 ("|" + controlSymbolRegexString + ")");
 var Lexer = class {
-  // Category codes. The lexer only supports comment characters (14) for now.
-  // MacroExpander additionally distinguishes active (13).
   constructor(input, settings) {
+    this.input = void 0;
+    this.settings = void 0;
+    this.tokenRegex = void 0;
+    this.catcodes = void 0;
     this.input = input;
     this.settings = settings;
     this.tokenRegex = new RegExp(tokenRegexString, "g");
@@ -219775,6 +220017,9 @@ var Namespace = class {
     if (globalMacros === void 0) {
       globalMacros = {};
     }
+    this.current = void 0;
+    this.builtins = void 0;
+    this.undefStack = void 0;
     this.current = globalMacros;
     this.builtins = builtins;
     this.undefStack = [];
@@ -220541,6 +220786,12 @@ var implicitCommands = {
 };
 var MacroExpander = class {
   constructor(input, settings, mode) {
+    this.settings = void 0;
+    this.expansionCount = void 0;
+    this.lexer = void 0;
+    this.macros = void 0;
+    this.stack = void 0;
+    this.mode = void 0;
     this.settings = settings;
     this.expansionCount = 0;
     this.feed(input);
@@ -221413,6 +221664,11 @@ var unicodeSymbols = {
 };
 var Parser = class _Parser {
   constructor(input, settings) {
+    this.mode = void 0;
+    this.gullet = void 0;
+    this.settings = void 0;
+    this.leftrightDepth = void 0;
+    this.nextToken = void 0;
     this.mode = "math";
     this.gullet = new MacroExpander(input, settings, this.mode);
     this.settings = settings;
@@ -221834,8 +222090,9 @@ var Parser = class _Parser {
           type: "styling",
           mode: group.mode,
           body: [group],
-          style: "text"
+          style: "text",
           // simulate \textstyle
+          resetFont: true
         } : null;
       }
       case "raw": {
@@ -222158,12 +222415,11 @@ var Parser = class _Parser {
       var group = symbols[this.mode][text3].group;
       var loc = SourceLocation.range(nucleus);
       var s2;
-      if (ATOMS.hasOwnProperty(group)) {
-        var family = group;
+      if (isAtom(group)) {
         s2 = {
           type: "atom",
           mode: this.mode,
-          family,
+          family: group,
           loc,
           text: text3
         };
@@ -222211,7 +222467,6 @@ var Parser = class _Parser {
           label: command,
           isStretchy: false,
           isShifty: true,
-          // TODO(ts)
           base: symbol
         };
       }
@@ -222290,7 +222545,7 @@ var renderToHTMLTree = function renderToHTMLTree2(expression, options) {
     return renderError(error2, expression, settings);
   }
 };
-var version = "0.16.45";
+var version = "0.16.47";
 var __domTree = {
   Span,
   Anchor,
@@ -222633,6 +222888,7 @@ var html = create({
     allowFullScreen: boolean,
     allowPaymentRequest: boolean,
     allowUserMedia: boolean,
+    alpha: boolean,
     alt: null,
     as: null,
     async: boolean,
@@ -222646,8 +222902,12 @@ var html = create({
     checked: boolean,
     cite: null,
     className: spaceSeparated,
+    closedBy: null,
+    colorSpace: null,
     cols: number,
-    colSpan: null,
+    colSpan: number,
+    command: null,
+    commandFor: null,
     content: null,
     contentEditable: booleanish,
     controls: boolean,
@@ -222827,8 +223087,10 @@ var html = create({
     seamless: boolean,
     selected: boolean,
     shadowRootClonable: boolean,
+    shadowRootCustomElementRegistry: boolean,
     shadowRootDelegatesFocus: boolean,
     shadowRootMode: null,
+    shadowRootSerializable: boolean,
     shape: null,
     size: number,
     sizes: null,
@@ -222965,8 +223227,11 @@ var html = create({
     allowTransparency: null,
     autoCorrect: null,
     autoSave: null,
+    credentialless: boolean,
     disablePictureInPicture: boolean,
     disableRemotePlayback: boolean,
+    exportParts: commaSeparated,
+    part: spaceSeparated,
     prefix: null,
     property: null,
     results: number,
@@ -223020,6 +223285,7 @@ var svg = create({
     markerEnd: "marker-end",
     markerMid: "marker-mid",
     markerStart: "marker-start",
+    maskType: "mask-type",
     navDown: "nav-down",
     navDownLeft: "nav-down-left",
     navDownRight: "nav-down-right",
@@ -223290,6 +223556,7 @@ var svg = create({
     markerWidth: null,
     mask: null,
     maskContentUnits: null,
+    maskType: null,
     maskUnits: null,
     mathematical: null,
     max: null,

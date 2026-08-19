@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+### Patch Changes
+
+- f9cf161: Fix nested callout body text leaking into the title when the body contains bold/italic formatting. Previously, inline nodes (e.g., `**bold**`) following a newline in a nested blockquote callout were incorrectly included in the callout title instead of the callout content.
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
