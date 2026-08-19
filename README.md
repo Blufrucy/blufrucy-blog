@@ -34,10 +34,10 @@
 | **首页** | `/` | Hero 双栏布局 + Social Pills + 项目卡片 + 技术栈 |
 | **项目** | `/项目` | 6 个作品卡片网格，含标签和外部链接图标 |
 | **博客** | `/博客` | 动态列表 + 标签筛选，从 `contentIndex.json` 自动加载 |
-| **相册** | `/相册` | 9 图网格 + 灯箱，图片懒加载淡入 + shimmer 骨架屏 |
-| **音乐** | `/音乐` | 6 张专辑卡片，渐变封面 + 流派标签 + hover 播放图标 |
-| **动漫** | `/动漫` | 6 部推荐横向卡片，海报 + 评分 + 类型标签 + 个人评价 |
-| **收藏** | `/收藏` | 5 分类书签列表，AI/设计/工具/学习/博客 |
+| **相册** | `/相册` | 9 图瀑布流 + 灯箱，真实照片懒加载淡入 + hover 字幕 |
+| **音乐** | `/音乐` | 6 张方形封面卡片，渐变封面 + hover 居中圆形播放键 |
+| **动漫** | `/动漫` | 6 部推荐横向卡片，幽灵排名序号 + 海报 + 评分 + 个人评价 |
+| **收藏** | `/收藏` | 5 分类两列卡片网格，外链箭头 + 来源标签 |
 
 ## ✦ 功能亮点
 
@@ -60,7 +60,7 @@
   </tr>
   <tr>
     <td><b>🧭 Sticky 导航栏</b></td>
-    <td>全宽毛玻璃 · <code>backdrop-filter: blur(8px)</code> · active 高亮 · 移动端自适应</td>
+    <td>全宽毛玻璃 · <code>backdrop-filter: blur(8px)</code> · 搜索入口 · active 高亮 · 移动端自适应</td>
   </tr>
   <tr>
     <td><b>🎬 动效系统</b></td>
@@ -92,7 +92,7 @@ Blufrucy-blog/
 │   │   │   ├── Footer.tsx    #   自定义页脚 (Blufrucy 品牌)
 │   │   │   └── frames/       #   布局框架 (Default, FullWidth, Minimal)
 │   │   ├── styles/
-│   │   │   ├── custom.scss   #   ⭐ 全部自定义样式 (~1960 行)
+│   │   │   ├── custom.scss   #   ⭐ 全部自定义样式 (~2050 行)
 │   │   │   └── variables.scss
 │   │   └── plugins/
 │   ├── quartz.config.yaml    # ⭐ Quartz 配置 (主题/插件/布局)
@@ -110,7 +110,7 @@ Blufrucy-blog/
 |---|---|---|
 | **内容创作** | Obsidian | Markdown 笔记 + 双向链接 + 本地 vault |
 | **静态生成** | Quartz 5 (TypeScript) | Obsidian 原生风格 · 插件生态 · SPA 路由 |
-| **样式** | SCSS + CSS Variables | 主题变量 · 响应式断点 · ~1960 行精细化样式 |
+| **样式** | SCSS + CSS Variables | 主题变量 · 响应式断点 · ~2050 行精细化样式 |
 | **组件** | Preact (JSX) | 轻量 · Quartz 内置 · 自定义 Navbar/Footer/Frame |
 | **字体** | Schibsted Grotesk + Source Sans Pro | Google Fonts · 标题/正文分层 |
 | **分析** | Plausible Analytics | 隐私优先 · 零 Cookie · SPA 追踪 |
@@ -154,7 +154,7 @@ date: 2026-07-20
 
 | 组件 | 文件 | 功能 |
 |---|---|---|
-| **Navbar** | `quartz/components/Navbar.tsx` | Sticky 导航 · 明暗切换 · 中/EN 语言切换 · active 高亮 · 内联防 FOUC 脚本 |
+| **Navbar** | `quartz/components/Navbar.tsx` | Sticky 导航 · 搜索入口 · 明暗切换 · 中/EN 语言切换 · active 高亮 · 内联防 FOUC 脚本 |
 | **Footer** | `quartz/components/Footer.tsx` | 全宽页脚 · Blufrucy 品牌字标 · 邮箱 + 电话 |
 | **DefaultFrame** | `quartz/components/frames/DefaultFrame.tsx` | 单栏居中布局 · 无侧边栏 · 使用自定义 Footer |
 
@@ -162,7 +162,7 @@ date: 2026-07-20
 
 ## ✦ 样式系统
 
-[`custom.scss`](quartz/quartz/styles/custom.scss) 包含 ~1960 行 SCSS，按模块组织：
+[`custom.scss`](quartz/quartz/styles/custom.scss) 包含 ~2050 行 SCSS，按模块组织：
 
 | 模块 | 内容 |
 |---|---|
@@ -172,10 +172,10 @@ date: 2026-07-20
 | **Cards** | 圆角 12px 项目卡片 · 3 列响应式网格 · 暗色适配阴影 |
 | **Pills** | 圆角胶囊 · Social Pills · Stack Pills · 标签滤镜 |
 | **Blog** | 列表化布局 · 2 行截断描述 · 标签胶囊 · 筛选按钮 · hover 高亮背景 |
-| **Gallery** | 3 列网格相册 · 灯箱 · shimmer 骨架屏 · 图片淡入 |
-| **Music** | 专辑卡片 · 渐变封面 · hover 播放图标 · 试听按钮 |
-| **Anime** | 横向海报卡片 · 评分展示 · 类型标签 · 日文标题副行 |
-| **Bookmarks** | 分类区段 · 书签列表 · 来源标签 · hover 色移 |
+| **Gallery** | CSS 多列瀑布流 · 灯箱 · hover 渐变字幕 · 图片懒加载淡入 |
+| **Music** | 方形封面卡片 · 渐变封面 · hover 居中圆形播放键 · 简介两行截断 |
+| **Anime** | 横向海报卡片 · 幽灵排名序号 · 评分 · 类型标签 · 日文副标题 |
+| **Bookmarks** | 分类区段 · 两列卡片网格 · 外链箭头 · 来源标签 |
 | **Footer** | 全宽 · 响应式 flex · 品牌展示 |
 | **Theme** | CSS Variables 暗色/亮色双主题 · `#0f0f0f` 纯黑背景 · `prefers-reduced-motion` |
 

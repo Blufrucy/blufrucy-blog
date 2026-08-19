@@ -35,10 +35,18 @@
 - **理由**: 与 Obsidian 编辑体验兼容、非开发者也能编辑、Quartz 原生渲染管线
 - **代价**: 复杂交互需要内嵌 `<script>` 标签，不如 TSX 组件优雅
 
+### ADR-5: 收藏类页面统一设计语言
+- **日期**: 2026-08
+- **决定**: 相册/音乐/动漫/收藏四页重构为统一设计语言 — 共享 `.section-header`（kicker 胶囊 + 标题 + 副标题）、`1px var(--lightgray)` 描边卡片、柔和 hover 上浮
+- **理由**: 四页原本风格不一且存在横向溢出；统一后视觉一致、无溢出
+- **实现**: 相册为 CSS 多列瀑布流（`column-count`）+ hover 渐变字幕 + 灯箱；音乐为方形封面卡片 + hover 居中圆形播放键；动漫为横向海报卡片 + 幽灵排名序号；收藏为两列卡片网格 + 外链箭头（需隐藏 Quartz 自动注入的 `.external-icon`）
+- **相关修复**: 全站横向溢出根因是 `.center` 为 `box-sizing: content-box`，`max-width: 1280px` 未含 desktop 下 `3rem×2` 内边距。已在 `.center/footer` 上加 `box-sizing: border-box` — **不要回退**，否则 108px 横向滚动条会复现
+
 ## 已知问题与 TODO
 
 - [ ] 移动端导航栏链接在 ≤800px 时完全隐藏（`display: none`），缺少汉堡菜单
-- [ ] 相册页图片源是外部 AI 生成 API，应在本地托管图片
+- [ ] 相册页图片源是 picsum.photos 占位图，应替换为真实照片并本地托管
+- [ ] 音乐/动漫/收藏内容均为占位数据，待填充真实收藏
 - [ ] 首页"Recent Posts"是硬编码单篇文章，应改为从 contentIndex.json 动态加载
 - [ ] 首页 Featured 区域只有 1 张卡片，内容不足
 - [ ] 构建时 TypeScript 检查有类型错误（社区插件类型声明问题），不影响构建
