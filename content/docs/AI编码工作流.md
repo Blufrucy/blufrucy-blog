@@ -1,5 +1,5 @@
 ---
-title: 博客 | Blog
+title: AI编码工作流
 description: 我的AI编码探索第一步
 tags:
   - AI

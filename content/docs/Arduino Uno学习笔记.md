@@ -1,6 +1,6 @@
 ---
-title: 博客 | Blog
-description: 刚开始学嵌入式软件有点懵
+title: Arduino Uno学习笔记1
+description: 刚开始学嵌入式软件懵懵懂懂
 tags:
   - 学习
 date: 2026年7月22日

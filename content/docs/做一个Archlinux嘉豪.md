@@ -1,5 +1,5 @@
 ---
-title: 博客 | Blog
+title: 做一个Archlinux嘉豪
 description: AI装系统才是时代的进步
 tags:
   - 学习
