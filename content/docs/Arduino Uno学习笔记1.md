@@ -1,14 +1,10 @@
-
 ---
-title: Arduino Uno 学习笔记 1
-description: Arduino Uno 入门学习笔记 — 基本语法、串口通信、引脚控制等。
+title: 博客 | Blog
+description: 刚开始学嵌入式软件有点懵
 tags:
-  - Arduino
-  - 嵌入式
-  - 硬件
-date: 2025-09-15
+  - 学习
+date: 2026年7月22日
 ---
-
 刚开始学习嵌入式硬件
 Arduino语法是建立在C/C++上的，语法差不多
 

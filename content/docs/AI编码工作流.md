@@ -1,3 +1,10 @@
+---
+title: 博客 | Blog
+description: 我的AI编码探索第一步
+tags:
+  - AI
+date: 2026年7月18日
+---
 编程工具+工具管理站+开发IDE
 
 ## Claude code安装
@@ -66,3 +73,4 @@ CC Switch右上角每个选项作用
 vscode直接安装claude插件就能使用
 
 其他IDEA如果没有claude插件，在IDE中的终端打开claude就行
+
