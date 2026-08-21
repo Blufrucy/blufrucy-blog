@@ -1,5 +1,5 @@
 ---
-title: Arduino Uno学习笔记1
+title: Arduino Uno学习笔记
 description: 刚开始学嵌入式软件懵懵懂懂
 tags:
   - 学习
