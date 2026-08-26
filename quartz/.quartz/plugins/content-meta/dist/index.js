@@ -35,7 +35,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 
 // node_modules/reading-time/lib/reading-time.js
 var require_reading_time = __commonJS({
-  "node_modules/reading-time/lib/reading-time.js"(exports$1, module) {
+  "node_modules/reading-time/lib/reading-time.js"(exports, module) {
     function codeIsInRanges(number, arrayOfRanges) {
       return arrayOfRanges.some(
         ([lowerBound, upperBound]) => lowerBound <= number && number <= upperBound
@@ -118,7 +118,7 @@ var require_reading_time = __commonJS({
 
 // node_modules/reading-time/lib/stream.js
 var require_stream = __commonJS({
-  "node_modules/reading-time/lib/stream.js"(exports$1, module) {
+  "node_modules/reading-time/lib/stream.js"(exports, module) {
     var readingTime2 = require_reading_time();
     var Transform = __require("stream").Transform;
     var util = __require("util");
@@ -153,7 +153,7 @@ var require_stream = __commonJS({
 
 // node_modules/reading-time/index.js
 var require_reading_time2 = __commonJS({
-  "node_modules/reading-time/index.js"(exports$1, module) {
+  "node_modules/reading-time/index.js"(exports, module) {
     module.exports.default = module.exports = require_reading_time();
     module.exports.readingTimeStream = require_stream();
   }

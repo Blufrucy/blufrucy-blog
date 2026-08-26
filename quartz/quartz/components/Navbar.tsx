@@ -46,6 +46,18 @@ const Navbar: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProp
           ))}
         </div>
         <div class="navbar-actions">
+          {/* Search trigger — opens the global search modal */}
+          <button class="navbar-action-btn navbar-search" aria-label="Search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 19.9 19.7"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+              <circle cx="8" cy="8" r="7" />
+            </svg>
+          </button>
           {/* Darkmode toggle */}
           <button class="navbar-action-btn darkmode" aria-label="Toggle dark mode">
             <svg
@@ -158,6 +170,22 @@ const setupLocaleToggle = () => {
 
 document.addEventListener("nav", setupLocaleToggle)
 document.addEventListener("render", setupLocaleToggle)
+
+// Navbar search icon — opens the existing global search modal by forwarding
+// the click to the (now visually hidden) in-body search button.
+const setupNavbarSearch = () => {
+  for (const btn of document.getElementsByClassName("navbar-search")) {
+    const openSearch = () => {
+      const hiddenTrigger = document.querySelector(".search .search-button")
+      if (hiddenTrigger) hiddenTrigger.click()
+    }
+    btn.addEventListener("click", openSearch)
+    window.addCleanup(() => btn.removeEventListener("click", openSearch))
+  }
+}
+
+document.addEventListener("nav", setupNavbarSearch)
+document.addEventListener("render", setupNavbarSearch)
 `
 
 Navbar.css = `

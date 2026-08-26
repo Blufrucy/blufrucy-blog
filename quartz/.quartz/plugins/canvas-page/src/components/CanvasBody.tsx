@@ -76,8 +76,7 @@ function applySubpath(
   if (subpath.startsWith("#^")) {
     const blockId = subpath.slice(2);
     const blocks = (page as Record<string, unknown>).blocks as
-      | Record<string, HastElement>
-      | undefined;
+      Record<string, HastElement> | undefined;
     const blockNode = blocks?.[blockId];
     if (!blockNode) return undefined;
     const wrapped =
@@ -394,8 +393,7 @@ export default ((userOpts?: CanvasPageOptions) => {
     const fileData = props.fileData as Record<string, unknown>;
     const slug = (props.fileData.slug ?? "") as FullSlug;
     const canvasData = fileData.canvasData as
-      | (CanvasData & { renderedTexts?: Record<string, string> })
-      | undefined;
+      (CanvasData & { renderedTexts?: Record<string, string> }) | undefined;
 
     if (!canvasData) {
       return (

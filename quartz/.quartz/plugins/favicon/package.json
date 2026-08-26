@@ -1,6 +1,6 @@
 {
   "name": "@quartz-community/favicon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Favicon emitter plugin for Quartz.",
   "type": "module",
   "license": "MIT",
@@ -39,10 +39,12 @@
     "format": "prettier . --check",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm run lint && npm run format && npm run test"
+    "check": "npm run typecheck && npm run lint && npm run format && npm run test",
+    "prepublishOnly": "npm run build",
+    "release": "npm run build && changeset publish"
   },
   "peerDependencies": {
-    "sharp": "^0.33.0"
+    "sharp": ">=0.33.0"
   },
   "peerDependenciesMeta": {
     "sharp": {
@@ -50,7 +52,7 @@
     }
   },
   "dependencies": {
-    "@quartz-community/types": "github:quartz-community/types"
+    "@quartz-community/types": "^0.2.1"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",
@@ -60,10 +62,11 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.6.2",
-    "sharp": "^0.33.0",
+    "sharp": "^0.34.5",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3",
-    "vitest": "^2.1.9"
+    "vitest": "^2.1.9",
+    "@changesets/cli": "^2.29.2"
   },
   "quartz": {
     "name": "favicon",
@@ -80,5 +83,8 @@
   "engines": {
     "node": ">=22",
     "npm": ">=10.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -25,8 +25,7 @@ export const CNAME: QuartzEmitterPlugin = () => ({
   name: "CNAME",
   async emit(ctx) {
     const baseUrl = (ctx.cfg.configuration as Record<string, unknown>).baseUrl as
-      | string
-      | undefined;
+      string | undefined;
     if (!baseUrl) {
       console.warn("CNAME emitter requires `baseUrl` to be set in your configuration");
       return [];

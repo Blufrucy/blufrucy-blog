@@ -1,10 +1,10 @@
 import { createRequire } from 'module';
-import { BasesBody_default, resolveBasesEntries, registerBuiltinViews, i18n, ViewSelector } from './chunk-4HXXKSJ4.js';
-export { BasesBody_default as BasesBody } from './chunk-4HXXKSJ4.js';
+import { BasesBody_default, resolveBasesEntries, registerBuiltinViews, i18n, ViewSelector } from './chunk-3MNNFWJ7.js';
+export { BasesBody_default as BasesBody } from './chunk-3MNNFWJ7.js';
 import { registerCustomViews, viewRegistry } from './chunk-2AUMER56.js';
 export { registerCustomViews, viewRegistry } from './chunk-2AUMER56.js';
-import { slugifyFilePath, k, S, l } from './chunk-X2AZ5GOJ.js';
-export { compile, evaluate, evaluateFilter, resolvePropertyValue, slugifyPath, transformLink } from './chunk-X2AZ5GOJ.js';
+import { slugifyFilePath, k, S, l } from './chunk-Y4KGLVLV.js';
+export { compile, evaluate, evaluateFilter, resolvePropertyValue, slugifyPath, transformLink } from './chunk-Y4KGLVLV.js';
 import { __commonJS, __require, __export, __toESM } from './chunk-TDUJOYTU.js';
 import default2, { join } from 'path';
 import default3 from 'process';
@@ -15,7 +15,7 @@ createRequire(import.meta.url);
 
 // node_modules/yaml/dist/nodes/identity.js
 var require_identity = __commonJS({
-  "node_modules/yaml/dist/nodes/identity.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/identity.js"(exports) {
     var ALIAS = /* @__PURE__ */ Symbol.for("yaml.alias");
     var DOC = /* @__PURE__ */ Symbol.for("yaml.document");
     var MAP = /* @__PURE__ */ Symbol.for("yaml.map");
@@ -50,28 +50,28 @@ var require_identity = __commonJS({
       return false;
     }
     var hasAnchor = (node) => (isScalar(node) || isCollection(node)) && !!node.anchor;
-    exports$1.ALIAS = ALIAS;
-    exports$1.DOC = DOC;
-    exports$1.MAP = MAP;
-    exports$1.NODE_TYPE = NODE_TYPE;
-    exports$1.PAIR = PAIR;
-    exports$1.SCALAR = SCALAR;
-    exports$1.SEQ = SEQ;
-    exports$1.hasAnchor = hasAnchor;
-    exports$1.isAlias = isAlias;
-    exports$1.isCollection = isCollection;
-    exports$1.isDocument = isDocument;
-    exports$1.isMap = isMap;
-    exports$1.isNode = isNode;
-    exports$1.isPair = isPair;
-    exports$1.isScalar = isScalar;
-    exports$1.isSeq = isSeq;
+    exports.ALIAS = ALIAS;
+    exports.DOC = DOC;
+    exports.MAP = MAP;
+    exports.NODE_TYPE = NODE_TYPE;
+    exports.PAIR = PAIR;
+    exports.SCALAR = SCALAR;
+    exports.SEQ = SEQ;
+    exports.hasAnchor = hasAnchor;
+    exports.isAlias = isAlias;
+    exports.isCollection = isCollection;
+    exports.isDocument = isDocument;
+    exports.isMap = isMap;
+    exports.isNode = isNode;
+    exports.isPair = isPair;
+    exports.isScalar = isScalar;
+    exports.isSeq = isSeq;
   }
 });
 
 // node_modules/yaml/dist/visit.js
 var require_visit = __commonJS({
-  "node_modules/yaml/dist/visit.js"(exports$1) {
+  "node_modules/yaml/dist/visit.js"(exports) {
     var identity = require_identity();
     var BREAK = /* @__PURE__ */ Symbol("break visit");
     var SKIP2 = /* @__PURE__ */ Symbol("skip children");
@@ -221,14 +221,14 @@ var require_visit = __commonJS({
         throw new Error(`Cannot replace node with ${pt} parent`);
       }
     }
-    exports$1.visit = visit2;
-    exports$1.visitAsync = visitAsync;
+    exports.visit = visit2;
+    exports.visitAsync = visitAsync;
   }
 });
 
 // node_modules/yaml/dist/doc/directives.js
 var require_directives = __commonJS({
-  "node_modules/yaml/dist/doc/directives.js"(exports$1) {
+  "node_modules/yaml/dist/doc/directives.js"(exports) {
     var identity = require_identity();
     var visit2 = require_visit();
     var escapeChars = {
@@ -392,13 +392,13 @@ var require_directives = __commonJS({
     };
     Directives.defaultYaml = { explicit: false, version: "1.2" };
     Directives.defaultTags = { "!!": "tag:yaml.org,2002:" };
-    exports$1.Directives = Directives;
+    exports.Directives = Directives;
   }
 });
 
 // node_modules/yaml/dist/doc/anchors.js
 var require_anchors = __commonJS({
-  "node_modules/yaml/dist/doc/anchors.js"(exports$1) {
+  "node_modules/yaml/dist/doc/anchors.js"(exports) {
     var identity = require_identity();
     var visit2 = require_visit();
     function anchorIsValid(anchor) {
@@ -458,16 +458,16 @@ var require_anchors = __commonJS({
         sourceObjects
       };
     }
-    exports$1.anchorIsValid = anchorIsValid;
-    exports$1.anchorNames = anchorNames;
-    exports$1.createNodeAnchors = createNodeAnchors;
-    exports$1.findNewAnchor = findNewAnchor;
+    exports.anchorIsValid = anchorIsValid;
+    exports.anchorNames = anchorNames;
+    exports.createNodeAnchors = createNodeAnchors;
+    exports.findNewAnchor = findNewAnchor;
   }
 });
 
 // node_modules/yaml/dist/doc/applyReviver.js
 var require_applyReviver = __commonJS({
-  "node_modules/yaml/dist/doc/applyReviver.js"(exports$1) {
+  "node_modules/yaml/dist/doc/applyReviver.js"(exports) {
     function applyReviver(reviver, obj, key, val) {
       if (val && typeof val === "object") {
         if (Array.isArray(val)) {
@@ -510,13 +510,13 @@ var require_applyReviver = __commonJS({
       }
       return reviver.call(obj, key, val);
     }
-    exports$1.applyReviver = applyReviver;
+    exports.applyReviver = applyReviver;
   }
 });
 
 // node_modules/yaml/dist/nodes/toJS.js
 var require_toJS = __commonJS({
-  "node_modules/yaml/dist/nodes/toJS.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/toJS.js"(exports) {
     var identity = require_identity();
     function toJS(value, arg, ctx) {
       if (Array.isArray(value))
@@ -539,13 +539,13 @@ var require_toJS = __commonJS({
         return Number(value);
       return value;
     }
-    exports$1.toJS = toJS;
+    exports.toJS = toJS;
   }
 });
 
 // node_modules/yaml/dist/nodes/Node.js
 var require_Node = __commonJS({
-  "node_modules/yaml/dist/nodes/Node.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/Node.js"(exports) {
     var applyReviver = require_applyReviver();
     var identity = require_identity();
     var toJS = require_toJS();
@@ -579,13 +579,13 @@ var require_Node = __commonJS({
         return typeof reviver === "function" ? applyReviver.applyReviver(reviver, { "": res }, "", res) : res;
       }
     };
-    exports$1.NodeBase = NodeBase;
+    exports.NodeBase = NodeBase;
   }
 });
 
 // node_modules/yaml/dist/nodes/Alias.js
 var require_Alias = __commonJS({
-  "node_modules/yaml/dist/nodes/Alias.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/Alias.js"(exports) {
     var anchors = require_anchors();
     var visit2 = require_visit();
     var identity = require_identity();
@@ -606,6 +606,8 @@ var require_Alias = __commonJS({
        * instance of the `source` anchor before this node.
        */
       resolve(doc, ctx) {
+        if (ctx?.maxAliasCount === 0)
+          throw new ReferenceError("Alias resolution is disabled");
         let nodes;
         if (ctx?.aliasResolveCache) {
           nodes = ctx.aliasResolveCache;
@@ -692,13 +694,13 @@ var require_Alias = __commonJS({
       }
       return 1;
     }
-    exports$1.Alias = Alias;
+    exports.Alias = Alias;
   }
 });
 
 // node_modules/yaml/dist/nodes/Scalar.js
 var require_Scalar = __commonJS({
-  "node_modules/yaml/dist/nodes/Scalar.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/Scalar.js"(exports) {
     var identity = require_identity();
     var Node = require_Node();
     var toJS = require_toJS();
@@ -720,14 +722,14 @@ var require_Scalar = __commonJS({
     Scalar.PLAIN = "PLAIN";
     Scalar.QUOTE_DOUBLE = "QUOTE_DOUBLE";
     Scalar.QUOTE_SINGLE = "QUOTE_SINGLE";
-    exports$1.Scalar = Scalar;
-    exports$1.isScalarValue = isScalarValue;
+    exports.Scalar = Scalar;
+    exports.isScalarValue = isScalarValue;
   }
 });
 
 // node_modules/yaml/dist/doc/createNode.js
 var require_createNode = __commonJS({
-  "node_modules/yaml/dist/doc/createNode.js"(exports$1) {
+  "node_modules/yaml/dist/doc/createNode.js"(exports) {
     var Alias = require_Alias();
     var identity = require_identity();
     var Scalar = require_Scalar();
@@ -795,13 +797,13 @@ var require_createNode = __commonJS({
         ref.node = node;
       return node;
     }
-    exports$1.createNode = createNode;
+    exports.createNode = createNode;
   }
 });
 
 // node_modules/yaml/dist/nodes/Collection.js
 var require_Collection = __commonJS({
-  "node_modules/yaml/dist/nodes/Collection.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/Collection.js"(exports) {
     var createNode = require_createNode();
     var identity = require_identity();
     var Node = require_Node();
@@ -935,15 +937,15 @@ var require_Collection = __commonJS({
         }
       }
     };
-    exports$1.Collection = Collection;
-    exports$1.collectionFromPath = collectionFromPath;
-    exports$1.isEmptyPath = isEmptyPath;
+    exports.Collection = Collection;
+    exports.collectionFromPath = collectionFromPath;
+    exports.isEmptyPath = isEmptyPath;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyComment.js
 var require_stringifyComment = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyComment.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyComment.js"(exports) {
     var stringifyComment = (str) => str.replace(/^(?!$)(?: $)?/gm, "#");
     function indentComment(comment, indent) {
       if (/^\n+$/.test(comment))
@@ -951,15 +953,15 @@ var require_stringifyComment = __commonJS({
       return indent ? comment.replace(/^(?! *$)/gm, indent) : comment;
     }
     var lineComment = (str, indent, comment) => str.endsWith("\n") ? indentComment(comment, indent) : comment.includes("\n") ? "\n" + indentComment(comment, indent) : (str.endsWith(" ") ? "" : " ") + comment;
-    exports$1.indentComment = indentComment;
-    exports$1.lineComment = lineComment;
-    exports$1.stringifyComment = stringifyComment;
+    exports.indentComment = indentComment;
+    exports.lineComment = lineComment;
+    exports.stringifyComment = stringifyComment;
   }
 });
 
 // node_modules/yaml/dist/stringify/foldFlowLines.js
 var require_foldFlowLines = __commonJS({
-  "node_modules/yaml/dist/stringify/foldFlowLines.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/foldFlowLines.js"(exports) {
     var FOLD_FLOW = "flow";
     var FOLD_BLOCK = "block";
     var FOLD_QUOTED = "quoted";
@@ -1085,16 +1087,16 @@ ${indent}${text.slice(fold + 1, end2)}`;
       }
       return end;
     }
-    exports$1.FOLD_BLOCK = FOLD_BLOCK;
-    exports$1.FOLD_FLOW = FOLD_FLOW;
-    exports$1.FOLD_QUOTED = FOLD_QUOTED;
-    exports$1.foldFlowLines = foldFlowLines;
+    exports.FOLD_BLOCK = FOLD_BLOCK;
+    exports.FOLD_FLOW = FOLD_FLOW;
+    exports.FOLD_QUOTED = FOLD_QUOTED;
+    exports.foldFlowLines = foldFlowLines;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyString.js
 var require_stringifyString = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyString.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyString.js"(exports) {
     var Scalar = require_Scalar();
     var foldFlowLines = require_foldFlowLines();
     var getFoldOptions = (ctx, isBlock) => ({
@@ -1370,13 +1372,13 @@ ${indent}`);
       }
       return res;
     }
-    exports$1.stringifyString = stringifyString;
+    exports.stringifyString = stringifyString;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringify.js
 var require_stringify = __commonJS({
-  "node_modules/yaml/dist/stringify/stringify.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringify.js"(exports) {
     var anchors = require_anchors();
     var identity = require_identity();
     var stringifyComment = require_stringifyComment();
@@ -1492,14 +1494,14 @@ var require_stringify = __commonJS({
       return identity.isScalar(node) || str[0] === "{" || str[0] === "[" ? `${props} ${str}` : `${props}
 ${ctx.indent}${str}`;
     }
-    exports$1.createStringifyContext = createStringifyContext;
-    exports$1.stringify = stringify;
+    exports.createStringifyContext = createStringifyContext;
+    exports.stringify = stringify;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyPair.js
 var require_stringifyPair = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyPair.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyPair.js"(exports) {
     var identity = require_identity();
     var Scalar = require_Scalar();
     var stringify = require_stringify();
@@ -1625,13 +1627,13 @@ ${ctx.indent}`;
       }
       return str;
     }
-    exports$1.stringifyPair = stringifyPair;
+    exports.stringifyPair = stringifyPair;
   }
 });
 
 // node_modules/yaml/dist/log.js
 var require_log = __commonJS({
-  "node_modules/yaml/dist/log.js"(exports$1) {
+  "node_modules/yaml/dist/log.js"(exports) {
     var node_process = __require("process");
     function debug(logLevel, ...messages) {
       if (logLevel === "debug")
@@ -1645,14 +1647,14 @@ var require_log = __commonJS({
           console.warn(warning);
       }
     }
-    exports$1.debug = debug;
-    exports$1.warn = warn;
+    exports.debug = debug;
+    exports.warn = warn;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/merge.js
 var require_merge = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/merge.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/merge.js"(exports) {
     var identity = require_identity();
     var Scalar = require_Scalar();
     var MERGE_KEY = "<<";
@@ -1668,18 +1670,18 @@ var require_merge = __commonJS({
     };
     var isMergeKey = (ctx, key) => (merge2.identify(key) || identity.isScalar(key) && (!key.type || key.type === Scalar.Scalar.PLAIN) && merge2.identify(key.value)) && ctx?.doc.schema.tags.some((tag) => tag.tag === merge2.tag && tag.default);
     function addMergeToJSMap(ctx, map, value) {
-      value = ctx && identity.isAlias(value) ? value.resolve(ctx.doc) : value;
-      if (identity.isSeq(value))
-        for (const it of value.items)
+      const source = resolveAliasValue(ctx, value);
+      if (identity.isSeq(source))
+        for (const it of source.items)
           mergeValue(ctx, map, it);
-      else if (Array.isArray(value))
-        for (const it of value)
+      else if (Array.isArray(source))
+        for (const it of source)
           mergeValue(ctx, map, it);
       else
-        mergeValue(ctx, map, value);
+        mergeValue(ctx, map, source);
     }
     function mergeValue(ctx, map, value) {
-      const source = ctx && identity.isAlias(value) ? value.resolve(ctx.doc) : value;
+      const source = resolveAliasValue(ctx, value);
       if (!identity.isMap(source))
         throw new Error("Merge sources must be maps or map aliases");
       const srcMap = source.toJSON(null, ctx, Map);
@@ -1700,15 +1702,18 @@ var require_merge = __commonJS({
       }
       return map;
     }
-    exports$1.addMergeToJSMap = addMergeToJSMap;
-    exports$1.isMergeKey = isMergeKey;
-    exports$1.merge = merge2;
+    function resolveAliasValue(ctx, value) {
+      return ctx && identity.isAlias(value) ? value.resolve(ctx.doc, ctx) : value;
+    }
+    exports.addMergeToJSMap = addMergeToJSMap;
+    exports.isMergeKey = isMergeKey;
+    exports.merge = merge2;
   }
 });
 
 // node_modules/yaml/dist/nodes/addPairToJSMap.js
 var require_addPairToJSMap = __commonJS({
-  "node_modules/yaml/dist/nodes/addPairToJSMap.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/addPairToJSMap.js"(exports) {
     var log = require_log();
     var merge2 = require_merge();
     var stringify = require_stringify();
@@ -1765,13 +1770,13 @@ var require_addPairToJSMap = __commonJS({
       }
       return JSON.stringify(jsKey);
     }
-    exports$1.addPairToJSMap = addPairToJSMap;
+    exports.addPairToJSMap = addPairToJSMap;
   }
 });
 
 // node_modules/yaml/dist/nodes/Pair.js
 var require_Pair = __commonJS({
-  "node_modules/yaml/dist/nodes/Pair.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/Pair.js"(exports) {
     var createNode = require_createNode();
     var stringifyPair = require_stringifyPair();
     var addPairToJSMap = require_addPairToJSMap();
@@ -1803,14 +1808,14 @@ var require_Pair = __commonJS({
         return ctx?.doc ? stringifyPair.stringifyPair(this, ctx, onComment, onChompKeep) : JSON.stringify(this);
       }
     };
-    exports$1.Pair = Pair;
-    exports$1.createPair = createPair;
+    exports.Pair = Pair;
+    exports.createPair = createPair;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyCollection.js
 var require_stringifyCollection = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyCollection.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyCollection.js"(exports) {
     var identity = require_identity();
     var stringify = require_stringify();
     var stringifyComment = require_stringifyComment();
@@ -1954,13 +1959,13 @@ ${indent}${end}`;
         lines.push(ic.trimStart());
       }
     }
-    exports$1.stringifyCollection = stringifyCollection;
+    exports.stringifyCollection = stringifyCollection;
   }
 });
 
 // node_modules/yaml/dist/nodes/YAMLMap.js
 var require_YAMLMap = __commonJS({
-  "node_modules/yaml/dist/nodes/YAMLMap.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/YAMLMap.js"(exports) {
     var stringifyCollection = require_stringifyCollection();
     var addPairToJSMap = require_addPairToJSMap();
     var Collection = require_Collection();
@@ -2096,14 +2101,14 @@ var require_YAMLMap = __commonJS({
         });
       }
     };
-    exports$1.YAMLMap = YAMLMap;
-    exports$1.findPair = findPair;
+    exports.YAMLMap = YAMLMap;
+    exports.findPair = findPair;
   }
 });
 
 // node_modules/yaml/dist/schema/common/map.js
 var require_map = __commonJS({
-  "node_modules/yaml/dist/schema/common/map.js"(exports$1) {
+  "node_modules/yaml/dist/schema/common/map.js"(exports) {
     var identity = require_identity();
     var YAMLMap = require_YAMLMap();
     var map = {
@@ -2118,13 +2123,13 @@ var require_map = __commonJS({
       },
       createNode: (schema, obj, ctx) => YAMLMap.YAMLMap.from(schema, obj, ctx)
     };
-    exports$1.map = map;
+    exports.map = map;
   }
 });
 
 // node_modules/yaml/dist/nodes/YAMLSeq.js
 var require_YAMLSeq = __commonJS({
-  "node_modules/yaml/dist/nodes/YAMLSeq.js"(exports$1) {
+  "node_modules/yaml/dist/nodes/YAMLSeq.js"(exports) {
     var createNode = require_createNode();
     var stringifyCollection = require_stringifyCollection();
     var Collection = require_Collection();
@@ -2233,13 +2238,13 @@ var require_YAMLSeq = __commonJS({
         idx = Number(idx);
       return typeof idx === "number" && Number.isInteger(idx) && idx >= 0 ? idx : null;
     }
-    exports$1.YAMLSeq = YAMLSeq;
+    exports.YAMLSeq = YAMLSeq;
   }
 });
 
 // node_modules/yaml/dist/schema/common/seq.js
 var require_seq = __commonJS({
-  "node_modules/yaml/dist/schema/common/seq.js"(exports$1) {
+  "node_modules/yaml/dist/schema/common/seq.js"(exports) {
     var identity = require_identity();
     var YAMLSeq = require_YAMLSeq();
     var seq = {
@@ -2254,13 +2259,13 @@ var require_seq = __commonJS({
       },
       createNode: (schema, obj, ctx) => YAMLSeq.YAMLSeq.from(schema, obj, ctx)
     };
-    exports$1.seq = seq;
+    exports.seq = seq;
   }
 });
 
 // node_modules/yaml/dist/schema/common/string.js
 var require_string = __commonJS({
-  "node_modules/yaml/dist/schema/common/string.js"(exports$1) {
+  "node_modules/yaml/dist/schema/common/string.js"(exports) {
     var stringifyString = require_stringifyString();
     var string = {
       identify: (value) => typeof value === "string",
@@ -2272,13 +2277,13 @@ var require_string = __commonJS({
         return stringifyString.stringifyString(item, ctx, onComment, onChompKeep);
       }
     };
-    exports$1.string = string;
+    exports.string = string;
   }
 });
 
 // node_modules/yaml/dist/schema/common/null.js
 var require_null = __commonJS({
-  "node_modules/yaml/dist/schema/common/null.js"(exports$1) {
+  "node_modules/yaml/dist/schema/common/null.js"(exports) {
     var Scalar = require_Scalar();
     var nullTag = {
       identify: (value) => value == null,
@@ -2289,13 +2294,13 @@ var require_null = __commonJS({
       resolve: () => new Scalar.Scalar(null),
       stringify: ({ source }, ctx) => typeof source === "string" && nullTag.test.test(source) ? source : ctx.options.nullStr
     };
-    exports$1.nullTag = nullTag;
+    exports.nullTag = nullTag;
   }
 });
 
 // node_modules/yaml/dist/schema/core/bool.js
 var require_bool = __commonJS({
-  "node_modules/yaml/dist/schema/core/bool.js"(exports$1) {
+  "node_modules/yaml/dist/schema/core/bool.js"(exports) {
     var Scalar = require_Scalar();
     var boolTag = {
       identify: (value) => typeof value === "boolean",
@@ -2312,13 +2317,13 @@ var require_bool = __commonJS({
         return value ? ctx.options.trueStr : ctx.options.falseStr;
       }
     };
-    exports$1.boolTag = boolTag;
+    exports.boolTag = boolTag;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyNumber.js
 var require_stringifyNumber = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyNumber.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyNumber.js"(exports) {
     function stringifyNumber({ format, minFractionDigits, tag, value }) {
       if (typeof value === "bigint")
         return String(value);
@@ -2326,7 +2331,7 @@ var require_stringifyNumber = __commonJS({
       if (!isFinite(num))
         return isNaN(num) ? ".nan" : num < 0 ? "-.inf" : ".inf";
       let n = Object.is(value, -0) ? "-0" : JSON.stringify(value);
-      if (!format && minFractionDigits && (!tag || tag === "tag:yaml.org,2002:float") && /^\d/.test(n)) {
+      if (!format && minFractionDigits && (!tag || tag === "tag:yaml.org,2002:float") && /^-?\d/.test(n) && !n.includes("e")) {
         let i2 = n.indexOf(".");
         if (i2 < 0) {
           i2 = n.length;
@@ -2338,13 +2343,13 @@ var require_stringifyNumber = __commonJS({
       }
       return n;
     }
-    exports$1.stringifyNumber = stringifyNumber;
+    exports.stringifyNumber = stringifyNumber;
   }
 });
 
 // node_modules/yaml/dist/schema/core/float.js
 var require_float = __commonJS({
-  "node_modules/yaml/dist/schema/core/float.js"(exports$1) {
+  "node_modules/yaml/dist/schema/core/float.js"(exports) {
     var Scalar = require_Scalar();
     var stringifyNumber = require_stringifyNumber();
     var floatNaN = {
@@ -2381,15 +2386,15 @@ var require_float = __commonJS({
       },
       stringify: stringifyNumber.stringifyNumber
     };
-    exports$1.float = float;
-    exports$1.floatExp = floatExp;
-    exports$1.floatNaN = floatNaN;
+    exports.float = float;
+    exports.floatExp = floatExp;
+    exports.floatNaN = floatNaN;
   }
 });
 
 // node_modules/yaml/dist/schema/core/int.js
 var require_int = __commonJS({
-  "node_modules/yaml/dist/schema/core/int.js"(exports$1) {
+  "node_modules/yaml/dist/schema/core/int.js"(exports) {
     var stringifyNumber = require_stringifyNumber();
     var intIdentify = (value) => typeof value === "bigint" || Number.isInteger(value);
     var intResolve = (str, offset, radix, { intAsBigInt }) => intAsBigInt ? BigInt(str) : parseInt(str.substring(offset), radix);
@@ -2425,15 +2430,15 @@ var require_int = __commonJS({
       resolve: (str, _onError, opt) => intResolve(str, 2, 16, opt),
       stringify: (node) => intStringify(node, 16, "0x")
     };
-    exports$1.int = int;
-    exports$1.intHex = intHex;
-    exports$1.intOct = intOct;
+    exports.int = int;
+    exports.intHex = intHex;
+    exports.intOct = intOct;
   }
 });
 
 // node_modules/yaml/dist/schema/core/schema.js
 var require_schema = __commonJS({
-  "node_modules/yaml/dist/schema/core/schema.js"(exports$1) {
+  "node_modules/yaml/dist/schema/core/schema.js"(exports) {
     var map = require_map();
     var _null = require_null();
     var seq = require_seq();
@@ -2454,13 +2459,13 @@ var require_schema = __commonJS({
       float.floatExp,
       float.float
     ];
-    exports$1.schema = schema;
+    exports.schema = schema;
   }
 });
 
 // node_modules/yaml/dist/schema/json/schema.js
 var require_schema2 = __commonJS({
-  "node_modules/yaml/dist/schema/json/schema.js"(exports$1) {
+  "node_modules/yaml/dist/schema/json/schema.js"(exports) {
     var Scalar = require_Scalar();
     var map = require_map();
     var seq = require_seq();
@@ -2520,13 +2525,13 @@ var require_schema2 = __commonJS({
       }
     };
     var schema = [map.map, seq.seq].concat(jsonScalars, jsonError);
-    exports$1.schema = schema;
+    exports.schema = schema;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/binary.js
 var require_binary = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/binary.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/binary.js"(exports) {
     var node_buffer = __require("buffer");
     var Scalar = require_Scalar();
     var stringifyString = require_stringifyString();
@@ -2585,13 +2590,13 @@ var require_binary = __commonJS({
         return stringifyString.stringifyString({ comment, type, value: str }, ctx, onComment, onChompKeep);
       }
     };
-    exports$1.binary = binary;
+    exports.binary = binary;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/pairs.js
 var require_pairs = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/pairs.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/pairs.js"(exports) {
     var identity = require_identity();
     var Pair = require_Pair();
     var Scalar = require_Scalar();
@@ -2660,15 +2665,15 @@ ${cn.comment}` : item.comment;
       resolve: resolvePairs,
       createNode: createPairs
     };
-    exports$1.createPairs = createPairs;
-    exports$1.pairs = pairs;
-    exports$1.resolvePairs = resolvePairs;
+    exports.createPairs = createPairs;
+    exports.pairs = pairs;
+    exports.resolvePairs = resolvePairs;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/omap.js
 var require_omap = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/omap.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/omap.js"(exports) {
     var identity = require_identity();
     var toJS = require_toJS();
     var YAMLMap = require_YAMLMap();
@@ -2738,14 +2743,14 @@ var require_omap = __commonJS({
       },
       createNode: (schema, iterable, ctx) => YAMLOMap.from(schema, iterable, ctx)
     };
-    exports$1.YAMLOMap = YAMLOMap;
-    exports$1.omap = omap;
+    exports.YAMLOMap = YAMLOMap;
+    exports.omap = omap;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/bool.js
 var require_bool2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/bool.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/bool.js"(exports) {
     var Scalar = require_Scalar();
     function boolStringify({ value, source }, ctx) {
       const boolObj = value ? trueTag : falseTag;
@@ -2769,14 +2774,14 @@ var require_bool2 = __commonJS({
       resolve: () => new Scalar.Scalar(false),
       stringify: boolStringify
     };
-    exports$1.falseTag = falseTag;
-    exports$1.trueTag = trueTag;
+    exports.falseTag = falseTag;
+    exports.trueTag = trueTag;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/float.js
 var require_float2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/float.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/float.js"(exports) {
     var Scalar = require_Scalar();
     var stringifyNumber = require_stringifyNumber();
     var floatNaN = {
@@ -2816,15 +2821,15 @@ var require_float2 = __commonJS({
       },
       stringify: stringifyNumber.stringifyNumber
     };
-    exports$1.float = float;
-    exports$1.floatExp = floatExp;
-    exports$1.floatNaN = floatNaN;
+    exports.float = float;
+    exports.floatExp = floatExp;
+    exports.floatNaN = floatNaN;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/int.js
 var require_int2 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/int.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/int.js"(exports) {
     var stringifyNumber = require_stringifyNumber();
     var intIdentify = (value) => typeof value === "bigint" || Number.isInteger(value);
     function intResolve(str, offset, radix, { intAsBigInt }) {
@@ -2893,16 +2898,16 @@ var require_int2 = __commonJS({
       resolve: (str, _onError, opt) => intResolve(str, 2, 16, opt),
       stringify: (node) => intStringify(node, 16, "0x")
     };
-    exports$1.int = int;
-    exports$1.intBin = intBin;
-    exports$1.intHex = intHex;
-    exports$1.intOct = intOct;
+    exports.int = int;
+    exports.intBin = intBin;
+    exports.intHex = intHex;
+    exports.intOct = intOct;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/set.js
 var require_set = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/set.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/set.js"(exports) {
     var identity = require_identity();
     var Pair = require_Pair();
     var YAMLMap = require_YAMLMap();
@@ -2983,14 +2988,14 @@ var require_set = __commonJS({
         return map;
       }
     };
-    exports$1.YAMLSet = YAMLSet;
-    exports$1.set = set;
+    exports.YAMLSet = YAMLSet;
+    exports.set = set;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/timestamp.js
 var require_timestamp = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/timestamp.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/timestamp.js"(exports) {
     var stringifyNumber = require_stringifyNumber();
     function parseSexagesimal(str, asBigInt) {
       const sign = str[0];
@@ -3069,15 +3074,15 @@ var require_timestamp = __commonJS({
       },
       stringify: ({ value }) => value?.toISOString().replace(/(T00:00:00)?\.000Z$/, "") ?? ""
     };
-    exports$1.floatTime = floatTime;
-    exports$1.intTime = intTime;
-    exports$1.timestamp = timestamp;
+    exports.floatTime = floatTime;
+    exports.intTime = intTime;
+    exports.timestamp = timestamp;
   }
 });
 
 // node_modules/yaml/dist/schema/yaml-1.1/schema.js
 var require_schema3 = __commonJS({
-  "node_modules/yaml/dist/schema/yaml-1.1/schema.js"(exports$1) {
+  "node_modules/yaml/dist/schema/yaml-1.1/schema.js"(exports) {
     var map = require_map();
     var _null = require_null();
     var seq = require_seq();
@@ -3114,13 +3119,13 @@ var require_schema3 = __commonJS({
       timestamp.floatTime,
       timestamp.timestamp
     ];
-    exports$1.schema = schema;
+    exports.schema = schema;
   }
 });
 
 // node_modules/yaml/dist/schema/tags.js
 var require_tags = __commonJS({
-  "node_modules/yaml/dist/schema/tags.js"(exports$1) {
+  "node_modules/yaml/dist/schema/tags.js"(exports) {
     var map = require_map();
     var _null = require_null();
     var seq = require_seq();
@@ -3206,14 +3211,14 @@ var require_tags = __commonJS({
         return tags2;
       }, []);
     }
-    exports$1.coreKnownTags = coreKnownTags;
-    exports$1.getTags = getTags;
+    exports.coreKnownTags = coreKnownTags;
+    exports.getTags = getTags;
   }
 });
 
 // node_modules/yaml/dist/schema/Schema.js
 var require_Schema = __commonJS({
-  "node_modules/yaml/dist/schema/Schema.js"(exports$1) {
+  "node_modules/yaml/dist/schema/Schema.js"(exports) {
     var identity = require_identity();
     var map = require_map();
     var seq = require_seq();
@@ -3238,13 +3243,13 @@ var require_Schema = __commonJS({
         return copy;
       }
     };
-    exports$1.Schema = Schema2;
+    exports.Schema = Schema2;
   }
 });
 
 // node_modules/yaml/dist/stringify/stringifyDocument.js
 var require_stringifyDocument = __commonJS({
-  "node_modules/yaml/dist/stringify/stringifyDocument.js"(exports$1) {
+  "node_modules/yaml/dist/stringify/stringifyDocument.js"(exports) {
     var identity = require_identity();
     var stringify = require_stringify();
     var stringifyComment = require_stringifyComment();
@@ -3317,13 +3322,13 @@ var require_stringifyDocument = __commonJS({
       }
       return lines.join("\n") + "\n";
     }
-    exports$1.stringifyDocument = stringifyDocument;
+    exports.stringifyDocument = stringifyDocument;
   }
 });
 
 // node_modules/yaml/dist/doc/Document.js
 var require_Document = __commonJS({
-  "node_modules/yaml/dist/doc/Document.js"(exports$1) {
+  "node_modules/yaml/dist/doc/Document.js"(exports) {
     var Alias = require_Alias();
     var Collection = require_Collection();
     var identity = require_identity();
@@ -3625,13 +3630,13 @@ var require_Document = __commonJS({
         return true;
       throw new Error("Expected a YAML collection as document contents");
     }
-    exports$1.Document = Document;
+    exports.Document = Document;
   }
 });
 
 // node_modules/yaml/dist/errors.js
 var require_errors = __commonJS({
-  "node_modules/yaml/dist/errors.js"(exports$1) {
+  "node_modules/yaml/dist/errors.js"(exports) {
     var YAMLError = class extends Error {
       constructor(name, pos, code, message) {
         super();
@@ -3686,16 +3691,16 @@ ${pointer}
 `;
       }
     };
-    exports$1.YAMLError = YAMLError;
-    exports$1.YAMLParseError = YAMLParseError;
-    exports$1.YAMLWarning = YAMLWarning;
-    exports$1.prettifyError = prettifyError;
+    exports.YAMLError = YAMLError;
+    exports.YAMLParseError = YAMLParseError;
+    exports.YAMLWarning = YAMLWarning;
+    exports.prettifyError = prettifyError;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-props.js
 var require_resolve_props = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-props.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-props.js"(exports) {
     function resolveProps(tokens, { flow, indicator, next: next2, offset, onError, parentIndent, startOnNewline }) {
       let spaceBefore = false;
       let atNewline = startOnNewline;
@@ -3822,13 +3827,13 @@ var require_resolve_props = __commonJS({
         start: start ?? end
       };
     }
-    exports$1.resolveProps = resolveProps;
+    exports.resolveProps = resolveProps;
   }
 });
 
 // node_modules/yaml/dist/compose/util-contains-newline.js
 var require_util_contains_newline = __commonJS({
-  "node_modules/yaml/dist/compose/util-contains-newline.js"(exports$1) {
+  "node_modules/yaml/dist/compose/util-contains-newline.js"(exports) {
     function containsNewline(key) {
       if (!key)
         return null;
@@ -3863,13 +3868,13 @@ var require_util_contains_newline = __commonJS({
           return true;
       }
     }
-    exports$1.containsNewline = containsNewline;
+    exports.containsNewline = containsNewline;
   }
 });
 
 // node_modules/yaml/dist/compose/util-flow-indent-check.js
 var require_util_flow_indent_check = __commonJS({
-  "node_modules/yaml/dist/compose/util-flow-indent-check.js"(exports$1) {
+  "node_modules/yaml/dist/compose/util-flow-indent-check.js"(exports) {
     var utilContainsNewline = require_util_contains_newline();
     function flowIndentCheck(indent, fc, onError) {
       if (fc?.type === "flow-collection") {
@@ -3880,13 +3885,13 @@ var require_util_flow_indent_check = __commonJS({
         }
       }
     }
-    exports$1.flowIndentCheck = flowIndentCheck;
+    exports.flowIndentCheck = flowIndentCheck;
   }
 });
 
 // node_modules/yaml/dist/compose/util-map-includes.js
 var require_util_map_includes = __commonJS({
-  "node_modules/yaml/dist/compose/util-map-includes.js"(exports$1) {
+  "node_modules/yaml/dist/compose/util-map-includes.js"(exports) {
     var identity = require_identity();
     function mapIncludes(ctx, items, search2) {
       const { uniqueKeys } = ctx.options;
@@ -3895,13 +3900,13 @@ var require_util_map_includes = __commonJS({
       const isEqual = typeof uniqueKeys === "function" ? uniqueKeys : (a2, b2) => a2 === b2 || identity.isScalar(a2) && identity.isScalar(b2) && a2.value === b2.value;
       return items.some((pair) => isEqual(pair.key, search2));
     }
-    exports$1.mapIncludes = mapIncludes;
+    exports.mapIncludes = mapIncludes;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-block-map.js
 var require_resolve_block_map = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-map.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-block-map.js"(exports) {
     var Pair = require_Pair();
     var YAMLMap = require_YAMLMap();
     var resolveProps = require_resolve_props();
@@ -4002,13 +4007,13 @@ var require_resolve_block_map = __commonJS({
       map.range = [bm.offset, offset, commentEnd ?? offset];
       return map;
     }
-    exports$1.resolveBlockMap = resolveBlockMap;
+    exports.resolveBlockMap = resolveBlockMap;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-block-seq.js
 var require_resolve_block_seq = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-seq.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-block-seq.js"(exports) {
     var YAMLSeq = require_YAMLSeq();
     var resolveProps = require_resolve_props();
     var utilFlowIndentCheck = require_util_flow_indent_check();
@@ -4052,13 +4057,13 @@ var require_resolve_block_seq = __commonJS({
       seq.range = [bs.offset, offset, commentEnd ?? offset];
       return seq;
     }
-    exports$1.resolveBlockSeq = resolveBlockSeq;
+    exports.resolveBlockSeq = resolveBlockSeq;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-end.js
 var require_resolve_end = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-end.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-end.js"(exports) {
     function resolveEnd(end, offset, reqSpace, onError) {
       let comment = "";
       if (end) {
@@ -4094,13 +4099,13 @@ var require_resolve_end = __commonJS({
       }
       return { comment, offset };
     }
-    exports$1.resolveEnd = resolveEnd;
+    exports.resolveEnd = resolveEnd;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-flow-collection.js
 var require_resolve_flow_collection = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-flow-collection.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-flow-collection.js"(exports) {
     var identity = require_identity();
     var Pair = require_Pair();
     var YAMLMap = require_YAMLMap();
@@ -4287,13 +4292,13 @@ var require_resolve_flow_collection = __commonJS({
       }
       return coll;
     }
-    exports$1.resolveFlowCollection = resolveFlowCollection;
+    exports.resolveFlowCollection = resolveFlowCollection;
   }
 });
 
 // node_modules/yaml/dist/compose/compose-collection.js
 var require_compose_collection = __commonJS({
-  "node_modules/yaml/dist/compose/compose-collection.js"(exports$1) {
+  "node_modules/yaml/dist/compose/compose-collection.js"(exports) {
     var identity = require_identity();
     var Scalar = require_Scalar();
     var YAMLMap = require_YAMLMap();
@@ -4351,13 +4356,13 @@ var require_compose_collection = __commonJS({
         node.format = tag.format;
       return node;
     }
-    exports$1.composeCollection = composeCollection;
+    exports.composeCollection = composeCollection;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-block-scalar.js
 var require_resolve_block_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-block-scalar.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-block-scalar.js"(exports) {
     var Scalar = require_Scalar();
     function resolveBlockScalar(ctx, scalar, onError) {
       const start = scalar.offset;
@@ -4533,13 +4538,13 @@ var require_resolve_block_scalar = __commonJS({
         lines.push([split[i2], split[i2 + 1]]);
       return lines;
     }
-    exports$1.resolveBlockScalar = resolveBlockScalar;
+    exports.resolveBlockScalar = resolveBlockScalar;
   }
 });
 
 // node_modules/yaml/dist/compose/resolve-flow-scalar.js
 var require_resolve_flow_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/resolve-flow-scalar.js"(exports$1) {
+  "node_modules/yaml/dist/compose/resolve-flow-scalar.js"(exports) {
     var Scalar = require_Scalar();
     var resolveEnd = require_resolve_end();
     function resolveFlowScalar(scalar, strict, onError) {
@@ -4669,7 +4674,7 @@ var require_resolve_flow_scalar = __commonJS({
             while (next2 === " " || next2 === "	")
               next2 = source[++i2 + 1];
           } else if (next2 === "x" || next2 === "u" || next2 === "U") {
-            const length = { x: 2, u: 4, U: 8 }[next2];
+            const length = next2 === "x" ? 2 : next2 === "u" ? 4 : 8;
             res += parseCharCode(source, i2 + 1, length, onError);
             i2 += length;
           } else {
@@ -4744,20 +4749,21 @@ var require_resolve_flow_scalar = __commonJS({
       const cc = source.substr(offset, length);
       const ok3 = cc.length === length && /^[0-9a-fA-F]+$/.test(cc);
       const code = ok3 ? parseInt(cc, 16) : NaN;
-      if (isNaN(code)) {
+      try {
+        return String.fromCodePoint(code);
+      } catch {
         const raw = source.substr(offset - 2, length + 2);
         onError(offset - 2, "BAD_DQ_ESCAPE", `Invalid escape sequence ${raw}`);
         return raw;
       }
-      return String.fromCodePoint(code);
     }
-    exports$1.resolveFlowScalar = resolveFlowScalar;
+    exports.resolveFlowScalar = resolveFlowScalar;
   }
 });
 
 // node_modules/yaml/dist/compose/compose-scalar.js
 var require_compose_scalar = __commonJS({
-  "node_modules/yaml/dist/compose/compose-scalar.js"(exports$1) {
+  "node_modules/yaml/dist/compose/compose-scalar.js"(exports) {
     var identity = require_identity();
     var Scalar = require_Scalar();
     var resolveBlockScalar = require_resolve_block_scalar();
@@ -4831,13 +4837,13 @@ var require_compose_scalar = __commonJS({
       }
       return tag;
     }
-    exports$1.composeScalar = composeScalar;
+    exports.composeScalar = composeScalar;
   }
 });
 
 // node_modules/yaml/dist/compose/util-empty-scalar-position.js
 var require_util_empty_scalar_position = __commonJS({
-  "node_modules/yaml/dist/compose/util-empty-scalar-position.js"(exports$1) {
+  "node_modules/yaml/dist/compose/util-empty-scalar-position.js"(exports) {
     function emptyScalarPosition(offset, before, pos) {
       if (before) {
         pos ?? (pos = before.length);
@@ -4860,13 +4866,13 @@ var require_util_empty_scalar_position = __commonJS({
       }
       return offset;
     }
-    exports$1.emptyScalarPosition = emptyScalarPosition;
+    exports.emptyScalarPosition = emptyScalarPosition;
   }
 });
 
 // node_modules/yaml/dist/compose/compose-node.js
 var require_compose_node = __commonJS({
-  "node_modules/yaml/dist/compose/compose-node.js"(exports$1) {
+  "node_modules/yaml/dist/compose/compose-node.js"(exports) {
     var Alias = require_Alias();
     var identity = require_identity();
     var composeCollection = require_compose_collection();
@@ -4964,14 +4970,14 @@ var require_compose_node = __commonJS({
         alias.comment = re.comment;
       return alias;
     }
-    exports$1.composeEmptyNode = composeEmptyNode;
-    exports$1.composeNode = composeNode;
+    exports.composeEmptyNode = composeEmptyNode;
+    exports.composeNode = composeNode;
   }
 });
 
 // node_modules/yaml/dist/compose/compose-doc.js
 var require_compose_doc = __commonJS({
-  "node_modules/yaml/dist/compose/compose-doc.js"(exports$1) {
+  "node_modules/yaml/dist/compose/compose-doc.js"(exports) {
     var Document = require_Document();
     var composeNode = require_compose_node();
     var resolveEnd = require_resolve_end();
@@ -5007,13 +5013,13 @@ var require_compose_doc = __commonJS({
       doc.range = [offset, contentEnd, re.offset];
       return doc;
     }
-    exports$1.composeDoc = composeDoc;
+    exports.composeDoc = composeDoc;
   }
 });
 
 // node_modules/yaml/dist/compose/composer.js
 var require_composer = __commonJS({
-  "node_modules/yaml/dist/compose/composer.js"(exports$1) {
+  "node_modules/yaml/dist/compose/composer.js"(exports) {
     var node_process = __require("process");
     var directives = require_directives();
     var Document = require_Document();
@@ -5094,8 +5100,10 @@ ${cb}` : comment;
           }
         }
         if (afterDoc) {
-          Array.prototype.push.apply(doc.errors, this.errors);
-          Array.prototype.push.apply(doc.warnings, this.warnings);
+          for (let i2 = 0; i2 < this.errors.length; ++i2)
+            doc.errors.push(this.errors[i2]);
+          for (let i2 = 0; i2 < this.warnings.length; ++i2)
+            doc.warnings.push(this.warnings[i2]);
         } else {
           doc.errors = this.errors;
           doc.warnings = this.warnings;
@@ -5212,13 +5220,13 @@ ${end.comment}` : end.comment;
         }
       }
     };
-    exports$1.Composer = Composer;
+    exports.Composer = Composer;
   }
 });
 
 // node_modules/yaml/dist/parse/cst-scalar.js
 var require_cst_scalar = __commonJS({
-  "node_modules/yaml/dist/parse/cst-scalar.js"(exports$1) {
+  "node_modules/yaml/dist/parse/cst-scalar.js"(exports) {
     var resolveBlockScalar = require_resolve_block_scalar();
     var resolveFlowScalar = require_resolve_flow_scalar();
     var errors2 = require_errors();
@@ -5394,15 +5402,15 @@ var require_cst_scalar = __commonJS({
         }
       }
     }
-    exports$1.createScalarToken = createScalarToken;
-    exports$1.resolveAsScalar = resolveAsScalar;
-    exports$1.setScalarValue = setScalarValue;
+    exports.createScalarToken = createScalarToken;
+    exports.resolveAsScalar = resolveAsScalar;
+    exports.setScalarValue = setScalarValue;
   }
 });
 
 // node_modules/yaml/dist/parse/cst-stringify.js
 var require_cst_stringify = __commonJS({
-  "node_modules/yaml/dist/parse/cst-stringify.js"(exports$1) {
+  "node_modules/yaml/dist/parse/cst-stringify.js"(exports) {
     var stringify = (cst) => "type" in cst ? stringifyToken(cst) : stringifyItem(cst);
     function stringifyToken(token) {
       switch (token.type) {
@@ -5456,13 +5464,13 @@ var require_cst_stringify = __commonJS({
         res += stringifyToken(value);
       return res;
     }
-    exports$1.stringify = stringify;
+    exports.stringify = stringify;
   }
 });
 
 // node_modules/yaml/dist/parse/cst-visit.js
 var require_cst_visit = __commonJS({
-  "node_modules/yaml/dist/parse/cst-visit.js"(exports$1) {
+  "node_modules/yaml/dist/parse/cst-visit.js"(exports) {
     var BREAK = /* @__PURE__ */ Symbol("break visit");
     var SKIP2 = /* @__PURE__ */ Symbol("skip children");
     var REMOVE = /* @__PURE__ */ Symbol("remove item");
@@ -5517,13 +5525,13 @@ var require_cst_visit = __commonJS({
       }
       return typeof ctrl === "function" ? ctrl(item, path) : ctrl;
     }
-    exports$1.visit = visit2;
+    exports.visit = visit2;
   }
 });
 
 // node_modules/yaml/dist/parse/cst.js
 var require_cst = __commonJS({
-  "node_modules/yaml/dist/parse/cst.js"(exports$1) {
+  "node_modules/yaml/dist/parse/cst.js"(exports) {
     var cstScalar = require_cst_scalar();
     var cstStringify = require_cst_stringify();
     var cstVisit = require_cst_visit();
@@ -5606,25 +5614,25 @@ var require_cst = __commonJS({
       }
       return null;
     }
-    exports$1.createScalarToken = cstScalar.createScalarToken;
-    exports$1.resolveAsScalar = cstScalar.resolveAsScalar;
-    exports$1.setScalarValue = cstScalar.setScalarValue;
-    exports$1.stringify = cstStringify.stringify;
-    exports$1.visit = cstVisit.visit;
-    exports$1.BOM = BOM;
-    exports$1.DOCUMENT = DOCUMENT;
-    exports$1.FLOW_END = FLOW_END;
-    exports$1.SCALAR = SCALAR;
-    exports$1.isCollection = isCollection;
-    exports$1.isScalar = isScalar;
-    exports$1.prettyToken = prettyToken;
-    exports$1.tokenType = tokenType;
+    exports.createScalarToken = cstScalar.createScalarToken;
+    exports.resolveAsScalar = cstScalar.resolveAsScalar;
+    exports.setScalarValue = cstScalar.setScalarValue;
+    exports.stringify = cstStringify.stringify;
+    exports.visit = cstVisit.visit;
+    exports.BOM = BOM;
+    exports.DOCUMENT = DOCUMENT;
+    exports.FLOW_END = FLOW_END;
+    exports.SCALAR = SCALAR;
+    exports.isCollection = isCollection;
+    exports.isScalar = isScalar;
+    exports.prettyToken = prettyToken;
+    exports.tokenType = tokenType;
   }
 });
 
 // node_modules/yaml/dist/parse/lexer.js
 var require_lexer = __commonJS({
-  "node_modules/yaml/dist/parse/lexer.js"(exports$1) {
+  "node_modules/yaml/dist/parse/lexer.js"(exports) {
     var cst = require_cst();
     function isEmpty(ch) {
       switch (ch) {
@@ -5823,7 +5831,7 @@ var require_lexer = __commonJS({
           const n = (yield* this.pushCount(1)) + (yield* this.pushSpaces(true));
           this.indentNext = this.indentValue + 1;
           this.indentValue += n;
-          return yield* this.parseBlockStart();
+          return "block-start";
         }
         return "doc";
       }
@@ -6122,28 +6130,38 @@ var require_lexer = __commonJS({
         return 0;
       }
       *pushIndicators() {
-        switch (this.charAt(0)) {
-          case "!":
-            return (yield* this.pushTag()) + (yield* this.pushSpaces(true)) + (yield* this.pushIndicators());
-          case "&":
-            return (yield* this.pushUntil(isNotAnchorChar)) + (yield* this.pushSpaces(true)) + (yield* this.pushIndicators());
-          case "-":
-          // this is an error
-          case "?":
-          // this is an error outside flow collections
-          case ":": {
-            const inFlow = this.flowLevel > 0;
-            const ch1 = this.charAt(1);
-            if (isEmpty(ch1) || inFlow && flowIndicatorChars.has(ch1)) {
-              if (!inFlow)
-                this.indentNext = this.indentValue + 1;
-              else if (this.flowKey)
-                this.flowKey = false;
-              return (yield* this.pushCount(1)) + (yield* this.pushSpaces(true)) + (yield* this.pushIndicators());
+        let n = 0;
+        loop: while (true) {
+          switch (this.charAt(0)) {
+            case "!":
+              n += yield* this.pushTag();
+              n += yield* this.pushSpaces(true);
+              continue loop;
+            case "&":
+              n += yield* this.pushUntil(isNotAnchorChar);
+              n += yield* this.pushSpaces(true);
+              continue loop;
+            case "-":
+            // this is an error
+            case "?":
+            // this is an error outside flow collections
+            case ":": {
+              const inFlow = this.flowLevel > 0;
+              const ch1 = this.charAt(1);
+              if (isEmpty(ch1) || inFlow && flowIndicatorChars.has(ch1)) {
+                if (!inFlow)
+                  this.indentNext = this.indentValue + 1;
+                else if (this.flowKey)
+                  this.flowKey = false;
+                n += yield* this.pushCount(1);
+                n += yield* this.pushSpaces(true);
+                continue loop;
+              }
             }
           }
+          break loop;
         }
-        return 0;
+        return n;
       }
       *pushTag() {
         if (this.charAt(1) === "<") {
@@ -6196,13 +6214,13 @@ var require_lexer = __commonJS({
         return yield* this.pushToIndex(i2, false);
       }
     };
-    exports$1.Lexer = Lexer;
+    exports.Lexer = Lexer;
   }
 });
 
 // node_modules/yaml/dist/parse/line-counter.js
 var require_line_counter = __commonJS({
-  "node_modules/yaml/dist/parse/line-counter.js"(exports$1) {
+  "node_modules/yaml/dist/parse/line-counter.js"(exports) {
     var LineCounter = class {
       constructor() {
         this.lineStarts = [];
@@ -6226,13 +6244,13 @@ var require_line_counter = __commonJS({
         };
       }
     };
-    exports$1.LineCounter = LineCounter;
+    exports.LineCounter = LineCounter;
   }
 });
 
 // node_modules/yaml/dist/parse/parser.js
 var require_parser = __commonJS({
-  "node_modules/yaml/dist/parse/parser.js"(exports$1) {
+  "node_modules/yaml/dist/parse/parser.js"(exports) {
     var node_process = __require("process");
     var cst = require_cst();
     var lexer = require_lexer();
@@ -6300,6 +6318,13 @@ var require_parser = __commonJS({
       }
       return prev.splice(i2, prev.length);
     }
+    function arrayPushArray(target, source) {
+      if (source.length < 1e5)
+        Array.prototype.push.apply(target, source);
+      else
+        for (let i2 = 0; i2 < source.length; ++i2)
+          target.push(source[i2]);
+    }
     function fixFlowSeqItems(fc) {
       if (fc.start.type === "flow-seq-start") {
         for (const it of fc.items) {
@@ -6309,11 +6334,11 @@ var require_parser = __commonJS({
             delete it.key;
             if (isFlowToken(it.value)) {
               if (it.value.end)
-                Array.prototype.push.apply(it.value.end, it.sep);
+                arrayPushArray(it.value.end, it.sep);
               else
                 it.value.end = it.sep;
             } else
-              Array.prototype.push.apply(it.start, it.sep);
+              arrayPushArray(it.start, it.sep);
             delete it.sep;
           }
         }
@@ -6668,7 +6693,7 @@ var require_parser = __commonJS({
                 const prev = map.items[map.items.length - 2];
                 const end = prev?.value?.end;
                 if (Array.isArray(end)) {
-                  Array.prototype.push.apply(end, it.start);
+                  arrayPushArray(end, it.start);
                   end.push(this.sourceToken);
                   map.items.pop();
                   return;
@@ -6856,7 +6881,7 @@ var require_parser = __commonJS({
                 const prev = seq.items[seq.items.length - 2];
                 const end = prev?.value?.end;
                 if (Array.isArray(end)) {
-                  Array.prototype.push.apply(end, it.start);
+                  arrayPushArray(end, it.start);
                   end.push(this.sourceToken);
                   seq.items.pop();
                   return;
@@ -7092,13 +7117,13 @@ var require_parser = __commonJS({
         }
       }
     };
-    exports$1.Parser = Parser2;
+    exports.Parser = Parser2;
   }
 });
 
 // node_modules/yaml/dist/public-api.js
 var require_public_api = __commonJS({
-  "node_modules/yaml/dist/public-api.js"(exports$1) {
+  "node_modules/yaml/dist/public-api.js"(exports) {
     var composer = require_composer();
     var Document = require_Document();
     var errors2 = require_errors();
@@ -7185,16 +7210,16 @@ var require_public_api = __commonJS({
         return value.toString(options);
       return new Document.Document(value, _replacer, options).toString(options);
     }
-    exports$1.parse = parse5;
-    exports$1.parseAllDocuments = parseAllDocuments;
-    exports$1.parseDocument = parseDocument;
-    exports$1.stringify = stringify;
+    exports.parse = parse5;
+    exports.parseAllDocuments = parseAllDocuments;
+    exports.parseDocument = parseDocument;
+    exports.stringify = stringify;
   }
 });
 
 // node_modules/yaml/dist/index.js
 var require_dist = __commonJS({
-  "node_modules/yaml/dist/index.js"(exports$1) {
+  "node_modules/yaml/dist/index.js"(exports) {
     var composer = require_composer();
     var Document = require_Document();
     var Schema2 = require_Schema();
@@ -7211,35 +7236,35 @@ var require_dist = __commonJS({
     var parser = require_parser();
     var publicApi = require_public_api();
     var visit2 = require_visit();
-    exports$1.Composer = composer.Composer;
-    exports$1.Document = Document.Document;
-    exports$1.Schema = Schema2.Schema;
-    exports$1.YAMLError = errors2.YAMLError;
-    exports$1.YAMLParseError = errors2.YAMLParseError;
-    exports$1.YAMLWarning = errors2.YAMLWarning;
-    exports$1.Alias = Alias.Alias;
-    exports$1.isAlias = identity.isAlias;
-    exports$1.isCollection = identity.isCollection;
-    exports$1.isDocument = identity.isDocument;
-    exports$1.isMap = identity.isMap;
-    exports$1.isNode = identity.isNode;
-    exports$1.isPair = identity.isPair;
-    exports$1.isScalar = identity.isScalar;
-    exports$1.isSeq = identity.isSeq;
-    exports$1.Pair = Pair.Pair;
-    exports$1.Scalar = Scalar.Scalar;
-    exports$1.YAMLMap = YAMLMap.YAMLMap;
-    exports$1.YAMLSeq = YAMLSeq.YAMLSeq;
-    exports$1.CST = cst;
-    exports$1.Lexer = lexer.Lexer;
-    exports$1.LineCounter = lineCounter.LineCounter;
-    exports$1.Parser = parser.Parser;
-    exports$1.parse = publicApi.parse;
-    exports$1.parseAllDocuments = publicApi.parseAllDocuments;
-    exports$1.parseDocument = publicApi.parseDocument;
-    exports$1.stringify = publicApi.stringify;
-    exports$1.visit = visit2.visit;
-    exports$1.visitAsync = visit2.visitAsync;
+    exports.Composer = composer.Composer;
+    exports.Document = Document.Document;
+    exports.Schema = Schema2.Schema;
+    exports.YAMLError = errors2.YAMLError;
+    exports.YAMLParseError = errors2.YAMLParseError;
+    exports.YAMLWarning = errors2.YAMLWarning;
+    exports.Alias = Alias.Alias;
+    exports.isAlias = identity.isAlias;
+    exports.isCollection = identity.isCollection;
+    exports.isDocument = identity.isDocument;
+    exports.isMap = identity.isMap;
+    exports.isNode = identity.isNode;
+    exports.isPair = identity.isPair;
+    exports.isScalar = identity.isScalar;
+    exports.isSeq = identity.isSeq;
+    exports.Pair = Pair.Pair;
+    exports.Scalar = Scalar.Scalar;
+    exports.YAMLMap = YAMLMap.YAMLMap;
+    exports.YAMLSeq = YAMLSeq.YAMLSeq;
+    exports.CST = cst;
+    exports.Lexer = lexer.Lexer;
+    exports.LineCounter = lineCounter.LineCounter;
+    exports.Parser = parser.Parser;
+    exports.parse = publicApi.parse;
+    exports.parseAllDocuments = publicApi.parseAllDocuments;
+    exports.parseDocument = publicApi.parseDocument;
+    exports.stringify = publicApi.stringify;
+    exports.visit = visit2.visit;
+    exports.visitAsync = visit2.visitAsync;
   }
 });
 
@@ -7677,11 +7702,8 @@ function R(t, r2, o2, i2, u2, _2, b2) {
           ue = "http-equiv";
           break;
         default:
-          if (f.test(ue)) ue = ue.replace(f, "$1:$2").toLowerCase();
-          else {
-            if (l2.test(ue)) continue;
-            "-" !== ue[4] && !d.has(ue) || null == se ? o2 ? h.test(ue) && (ue = "panose1" === ue ? "panose-1" : ue.replace(/([A-Z])/g, "-$1").toLowerCase()) : p.test(ue) && (ue = ue.toLowerCase()) : se += H;
-          }
+          if (l2.test(ue)) continue;
+          f.test(ue) ? ue = ue.replace(f, "$1:$2").toLowerCase() : "-" !== ue[4] && !d.has(ue) || null == se ? o2 ? h.test(ue) && (ue = "panose1" === ue ? "panose-1" : ue.replace(/([A-Z])/g, "-$1").toLowerCase()) : p.test(ue) && (ue = ue.toLowerCase()) : se += H;
       }
       null != se && false !== se && (ae = true === se || se === H ? ae + " " + ue : ae + " " + ue + '="' + ("string" == typeof se ? g(se) : se + H) + '"');
     }
@@ -7939,6 +7961,7 @@ var html = create({
     allowFullScreen: boolean,
     allowPaymentRequest: boolean,
     allowUserMedia: boolean,
+    alpha: boolean,
     alt: null,
     as: null,
     async: boolean,
@@ -7952,8 +7975,12 @@ var html = create({
     checked: boolean,
     cite: null,
     className: spaceSeparated,
+    closedBy: null,
+    colorSpace: null,
     cols: number,
-    colSpan: null,
+    colSpan: number,
+    command: null,
+    commandFor: null,
     content: null,
     contentEditable: booleanish,
     controls: boolean,
@@ -8133,8 +8160,10 @@ var html = create({
     seamless: boolean,
     selected: boolean,
     shadowRootClonable: boolean,
+    shadowRootCustomElementRegistry: boolean,
     shadowRootDelegatesFocus: boolean,
     shadowRootMode: null,
+    shadowRootSerializable: boolean,
     shape: null,
     size: number,
     sizes: null,
@@ -8271,8 +8300,11 @@ var html = create({
     allowTransparency: null,
     autoCorrect: null,
     autoSave: null,
+    credentialless: boolean,
     disablePictureInPicture: boolean,
     disableRemotePlayback: boolean,
+    exportParts: commaSeparated,
+    part: spaceSeparated,
     prefix: null,
     property: null,
     results: number,
@@ -8326,6 +8358,7 @@ var svg = create({
     markerEnd: "marker-end",
     markerMid: "marker-mid",
     markerStart: "marker-start",
+    maskType: "mask-type",
     navDown: "nav-down",
     navDownLeft: "nav-down-left",
     navDownRight: "nav-down-right",
@@ -8596,6 +8629,7 @@ var svg = create({
     markerWidth: null,
     mask: null,
     maskContentUnits: null,
+    maskType: null,
     maskUnits: null,
     mathematical: null,
     max: null,
@@ -18468,8 +18502,9 @@ function createBasesCodeblockTransform(opts) {
 function renderBasesInline(basesData, allFiles, locale, localeStrings, opts, slug, allSlugs, linkResolution, viewName, selfContext) {
   let views = basesData.views ?? [];
   if (viewName) {
-    const viewNameLower = viewName.toLowerCase();
-    views = views.filter((v2) => v2.name?.toLowerCase() === viewNameLower);
+    const normalize2 = (s3) => s3.toLowerCase().replace(/\s+/g, "-");
+    const viewNameNorm = normalize2(viewName);
+    views = views.filter((v2) => v2.name !== void 0 && normalize2(v2.name) === viewNameNorm);
     if (views.length === 0) {
       return `<div class="bases-empty">View &quot;${viewName}&quot; not found</div>`;
     }

@@ -1,6 +1,2 @@
-import { QuartzComponent } from '@quartz-community/types';
+export { ArticleTitle } from './components/index.js';
 export { QuartzComponent, QuartzComponentProps, StringResource } from '@quartz-community/types';
-
-declare const _default: () => QuartzComponent;
-
-export { _default as ArticleTitle };
