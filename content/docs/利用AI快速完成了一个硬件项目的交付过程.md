@@ -1,5 +1,5 @@
 ---
-title: 博客 | Blog
+title: 利用AI快速完成了一个硬件项目的交付过程
 tags:
   - AI
 description: 灯光控制器，MCU为STC8G1K08，数码管驱动芯片TM1652
