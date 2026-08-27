@@ -1,12 +1,4 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Schibsted+Grotesk&weight=600&size=36&duration=3000&pause=1000&color=FFFFFF&center=true&vCenter=true&width=600&lines=%E8%B4%BA%E9%92%B0%E5%A0%82+%2F+Blufrucy;AI+Native+Developer;Designer+%C2%B7+Creator" />
-    <source media="(prefers-color-scheme: light)" srcset="https://readme-typing-svg.demolab.com?font=Schibsted+Grotesk&weight=600&size=36&duration=3000&pause=1000&color=1A1A1A&center=true&vCenter=true&width=600&lines=%E8%B4%BA%E9%92%B0%E5%A0%82+%2F+Blufrucy;AI+Native+Developer;Designer+%C2%B7+Creator" />
-    <img src="https://readme-typing-svg.demolab.com?font=Schibsted+Grotesk&weight=600&size=36&duration=3000&pause=1000&color=1A1A1A&center=true&vCenter=true&width=600&lines=%E8%B4%BA%E9%92%B0%E5%A0%82+%2F+Blufrucy;AI+Native+Developer;Designer+%C2%B7+Creator" alt="Typing SVG" />
-  </picture>
-</p>
-
-<p align="center">
   <samp>个人网站 &amp; 数字花园 — 由 <b>Obsidian</b> 驱动内容 · <b>Quartz 5</b> 生成站点 · <b>Vercel</b> 部署</samp>
 </p>
 
